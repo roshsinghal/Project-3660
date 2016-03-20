@@ -64,7 +64,20 @@ Manage Book|Book Service Rental
 		echo "</form>";
 		echo "<td></td>";
 		echo '</tr>';
-		echo '<h1 align="center">Manage Book</h1>';
+
+					echo '<h1 align="center">Manage Book</h1>';
+
+		echo '<table style="width:100%">';
+  	 echo '<tr align="center">';
+     echo '<th>Title</th>';
+     echo '<th>Publisher</th>';		
+     echo '<th>ISBN</th>';
+	 echo '<th>Available</th>';
+	 echo '<th>Total Copies</th>';
+	 echo '<th>Book ID</th>';
+	 echo '<th>Archived?</th>';
+  	 echo '</tr>';	
+
 	 while($val = mysql_fetch_row($result))
 	 {
 

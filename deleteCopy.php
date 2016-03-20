@@ -7,7 +7,7 @@
 </head>
 
 <title>
-Delete Book|Book Service Rental
+Delete Copy|Book Service Rental
 </title>
 <body>
 

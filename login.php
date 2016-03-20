@@ -30,5 +30,6 @@ $error = "Username or Password is invalid";
 }
 mysql_close($connection); // Closing Connection
 }
+echo "$error";
 }
 ?>

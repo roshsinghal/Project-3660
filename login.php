@@ -2,7 +2,7 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username or Password is invalid";
+$error = "Username $_POST['username'] or Password empty($_POST['password']) is invalid";
 }
 else
 {

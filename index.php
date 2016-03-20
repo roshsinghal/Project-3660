@@ -45,7 +45,7 @@ Book Rental Service
 
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+						<div class="one_half last"><a href="#" type="submit" class="btn btn_red">Login</a></div>
 					</div>
 				</form>
 

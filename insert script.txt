@@ -1,0 +1,53 @@
+/* inserting records */
+if not exists (select * from from book_details where book_id='' )
+insert into book_details(book_id , number_available, archived, title, isbn, publisher, no_of_copies) values('A100000001', 10, 0,'CONCEPT OF DATABASES','ISBN64647479','Oxford', 12);
+insert into book_availability(copy_id,book_id,bcondition) values('cp0001','A100000001',1);
+insert into book_details values('F100000001', 09, 0,'BEYOND THE LIMIT','ISBN6448479','Macmilan', 14);
+insert into book_availability values('cp0001','F100000001', 1);
+
+
+(book_id , number_available, archived, title, isbn, publisher, no_of_copies)
+
+/* for book searching on the main page */
+select 
+	number_available , 
+	title , 
+	isbn , 
+	publisher
+from book_details where archived!=1 and title like '%beyond%';
+
+
+/* Archiving books */
+
+START TRANSACTION
+insert into inactive_copies (book_id, archive_date, bcondition) values ('A100000001','cp0001','cover torn-off');
+delete from book_availability where book_id='A100000001' and copy_id='cp0001';
+COMMIT;
+
+/* for copy deletion */
+
+// This gets all copies for the selected book
+select  bd.book_id,
+	bd.number_available , 
+	bd.title , 
+	bd.isbn , 
+	bd.publisher,
+	ba.copy_id,
+	ba.availability_status
+from book_details bd 
+inner join book_availability ba on bd.book_id=ba.book_id
+where bd.book_id='A100000001';
+
+// This is executed for the selected copy to be deleted
+START TRANSACTION
+insert into inactive_copies (book_id, copy_id, bcondition) values ('A100000001','cp0001','cover torn-off');
+delete from book_availability where book_id='A100000001' and copy_id='cp0001';
+update book_details set no_of_copies=no_of_copies-1, number_available=number_available-1 where book_id='A100000001';
+COMMIT;
+
+/*if not exists (select * from book_details where book_id='A100000002' )*/
+insert into book_details(book_id , number_available, archived, title, isbn, publisher, no_of_copies) 
+values('A100000002', 23, 0,'Introduction to the theory of computation','ISBN690283493','MacMaster', 20);
+
+
+

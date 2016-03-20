@@ -2,13 +2,13 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username $_POST['username'] or Password empty($_POST['password']) is invalid";
+$error = "Username $_POST[username] or Password empty($_POST[password]) is invalid";
 }
 else
 {
 // Define $username and $password
-$username=$_POST['username'];
-$password=$_POST['password'];
+$username="$_POST['username']";
+$password="$_POST['password']";
 echo "$_POST['username'] $_POST['password']";
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 $connection = mysql_connect('17carson.cs.uleth.ca', 'group7', 'zpakwn');

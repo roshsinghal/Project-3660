@@ -2,6 +2,8 @@
 
 <head>
 <link href="mainCSS.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="jquery.leanModal.min.js"></script>
 </head>
 
 <title>
@@ -19,8 +21,7 @@ Delete Book|Book Service Rental
 	<li><a href="manageBook.html">Manage</a></li>
 	<li><a href="#Help">Help</a></li>
 	<li><a class="active" href="main.html">Home</a></li>
-	
-	<li><input type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40' margin:'4px auto'></input></li><br>
+	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
 	<li><input type="text" name="search" value="Enter a keyword" size=100/></li>
 </ul>
 

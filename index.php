@@ -90,7 +90,7 @@ Book Rental Service
 	<li><a href="#Help">Help</a></li>
 	<li><a class="active" href="index.php">Home</a></li>
 	<form action="index.php" method="get">
-	<li><input type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
+	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
 	<li><input type="text" name="search" value="" size=100/></li>
    </form>
 

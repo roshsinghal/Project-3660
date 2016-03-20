@@ -31,7 +31,7 @@ Book Rental Service
 				
 				<div class="action_btns">
 					<div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-					<div class="one_half last"><a href="register.html" id="register_form" class="btn">Register</a></div>
+					<div class="one_half last"><a href="register.php" id="register_form" class="btn">Register</a></div>
 				</div>
 			</div>
 

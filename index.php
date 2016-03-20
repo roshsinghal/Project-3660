@@ -1,3 +1,6 @@
+<?php
+session_start(); // Starting Session
+?>
 <html>
 
 <head>
@@ -36,16 +39,16 @@ Book Rental Service
 			<div class="user_login">
 				<form action="login.php" method="post">
 					<label>Username</label>
-					<input type="text" />
+					<input type="text" name="username" />
 					<br />
 
 					<label>Password</label>
-					<input type="password" />
+					<input type="password" name="password" />
 					<br />
 
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+						<div class="one_half last"><button type="submit" class="btn btn_red">Login</button></div>
 					</div>
 				</form>
 

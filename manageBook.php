@@ -64,10 +64,10 @@ Manage Book|Book Service Rental
 		echo "</form>";
 		echo "<td></td>";
 		echo '</tr>';
-
-					echo '<h1 align="center">Manage Book</h1>';
+	echo '</table>';
 
 		echo '<table style="width:100%">';
+		echo '<h1 align="center">Manage Book</h1>';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
      echo '<th>Publisher</th>';		
@@ -95,6 +95,7 @@ Manage Book|Book Service Rental
 		echo "<td></td>";
 		echo '</tr>';
 	 }
+	echo '</table>';
 	} 
 	
 	mysql_close($conn);

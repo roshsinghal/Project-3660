@@ -13,11 +13,22 @@ session_start(); // Starting Session
 Book Rental Service
 </title>
 <body>
+<?php 
+	//if(isset($_GET["error"])) echo $_GET['error'];
+?>
 
 <ul>
 	<div class="container">
 
-	<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>
+	<?php 
+		
+		if(!empty($_SESSION['login_user']))	
+			echo "<li><a id='logoutbttn' href='logout.php'>Logout</a></li>";
+			
+		else
+			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
+
+	?>
 
 	<div id="modal" class="popupContainer" style="display:none;">
 		<header class="popupHeader">

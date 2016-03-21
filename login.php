@@ -1,8 +1,13 @@
+// TAB YOUR SHIT OUT
+
+
 <?php
+//header("Location: index.php"); 
+//    exit;
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username $_POST[username] or Password $_POST[password] is invalid";
+	$error = "Username $_POST[username] or Password $_POST[password] is invalid";
 }
 else
 {
@@ -23,11 +28,13 @@ $query = mysql_query("select * from users where password='$password' AND user_na
 $rows = mysql_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$username; // Initializing Session
-header("location: index.php"); // Redirecting To Other Page
+//header("location: index.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
 }
 mysql_close($connection); // Closing Connection
 }
-echo "$error";
+//echo $error;
+if($error != '') header('location: index.php?error=' . $error);
+else header('location: index.php');
 ?>

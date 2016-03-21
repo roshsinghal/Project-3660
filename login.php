@@ -2,9 +2,7 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
-//$error = "Username $_POST[username] or Password $_POST[password] is invalid";
-echo "Please Log In First";
-echo "<script>setTimeout(\"location.href = 'hhttp://17carson.cs.uleth.ca/~cluz3660/index.php';\",1500);</script>";
+$error = "Username $_POST[username] or Password $_POST[password] is invalid";
 }
 else
 {

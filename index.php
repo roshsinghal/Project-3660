@@ -27,6 +27,7 @@ Book Rental Service
 			
 		else
 			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
+		/if(isset($_GET["error"])) echo $_GET['error'];
 
 	?>
 
@@ -102,6 +103,16 @@ Book Rental Service
 	<li><a class="active" href="index.php">Home</a></li>
 	<form action="index.php" method="get">
 	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
+	<?php 
+		
+		if(!empty($_SESSION['login_user']))	
+			echo "<li><a id='logoutbttn' href='logout.php'>Hello</a></li>";
+			
+		else
+			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
+		/if(isset($_GET["error"])) echo $_GET['error'];
+
+	?>
 	<li><input type="text" name="search" value="" size=100/></li>
    </form>
 

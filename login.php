@@ -28,7 +28,7 @@ $query = mysql_query("select is_admin from users where password='$password' AND 
 $rows = mysql_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$username; // Initializing Session
-if($val[0] == 9)
+if($val[0] == 1)
 {
 	$_SESSION['is_admin'] = True;
 }

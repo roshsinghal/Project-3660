@@ -106,7 +106,7 @@ Book Rental Service
 	<?php 
 		
 		if(!empty($_SESSION['login_user']))	
-			echo "<li><a id='logoutbttn' href='logout.php'>Hello, $_SESSION[login_user]</a></li>";
+			echo "<li>Hello, $_SESSION[login_user]</li>";
 		
 	?>
 	<li><input type="text" name="search" value="" size=100/></li>

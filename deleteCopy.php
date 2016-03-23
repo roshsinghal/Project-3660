@@ -1,3 +1,6 @@
+<?php
+session_start(); // Starting Session
+?>
 <html>
 
 <head>
@@ -11,20 +14,9 @@ Delete Copy|Book Service Rental
 </title>
 <body>
 
-<ul>
-	<div class="container">
-
-	<li><a id="modal_trigger" href="#modal" class="btn_log">Logout</a></li>
-
-	</div>
-	
-	<li><a href="manageBook.html">Manage</a></li>
-	<li><a href="#Help">Help</a></li>
-	<li><a class="active" href="main.html">Home</a></li>
-	
-	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
-	<li><input type="text" name="search" value="Enter a keyword" size=100/></li>
-</ul>
+<?php
+ require 'navigation.php';
+?>
 
 <h1 align="center">Delete a Book</h1>
 <?php 

@@ -106,12 +106,8 @@ Book Rental Service
 	<?php 
 		
 		if(!empty($_SESSION['login_user']))	
-			echo "<li><a id='logoutbttn' href='logout.php'>Hello</a></li>";
-			
-		else
-			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
-		/if(isset($_GET["error"])) echo $_GET['error'];
-
+			echo "<li><a id='logoutbttn' href='logout.php'>Hello, $_SESSION[login_user]</a></li>";
+		
 	?>
 	<li><input type="text" name="search" value="" size=100/></li>
    </form>

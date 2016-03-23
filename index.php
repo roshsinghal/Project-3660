@@ -13,9 +13,6 @@ session_start(); // Starting Session
 Book Rental Service
 </title>
 <body>
-<?php 
-	//if(isset($_GET["error"])) echo $_GET['error'];
-?>
 
 <ul>
 	<div class="container">
@@ -27,7 +24,6 @@ Book Rental Service
 			
 		else
 			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
-		/if(isset($_GET["error"])) echo $_GET['error'];
 
 	?>
 

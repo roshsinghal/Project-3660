@@ -24,10 +24,18 @@ $password = mysql_real_escape_string($password);
 // Selecting Database
 $db = mysql_select_db('group7', $connection);
 // SQL query to fetch information of registerd users and finds user match.
-$query = mysql_query("select * from users where password='$password' AND user_name='$username'", $connection);
+$query = mysql_query("select is_admin from users where password='$password' AND user_name='$username'", $connection);
 $rows = mysql_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$username; // Initializing Session
+if($val[0] == 9)
+{
+	$_SESSION['is_admin'] = True;
+}
+else
+{
+	$_SESSION['is_admin'] = False;
+}
 //header("location: index.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";

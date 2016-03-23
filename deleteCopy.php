@@ -1,5 +1,15 @@
 <?php
 session_start(); // Starting Session
+
+if(empty($_SESSION['is_admin']))
+{
+	header('location: index.php');
+}
+if(!$_SESSION['is_admin'])
+{
+	header('location: index.php');
+}
+
 ?>
 <html>
 

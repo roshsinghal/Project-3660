@@ -1,4 +1,6 @@
 <?php
+session_start(); // Starting Session
+
 	$username = 'group7';
 	$password = 'zpakwn';
 	$_SESSION['regErr'] = array();

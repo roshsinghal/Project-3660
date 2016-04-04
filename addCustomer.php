@@ -7,33 +7,62 @@ session_start(); // Starting Session
 	
 	if(empty($_POST['userName']))
 	{
-		$_SESSION['regErr']['userName'] = True;
+		$_SESSION['regErr']['userName'] = False;
 		$kill = True;	
 	}
+	else
+	{
+		$_SESSION['regErr']['userName'] = $_POST['userName'];
+	}
+	
 	if(empty($_POST['password']))
 	{
-		$_SESSION['regErr']['password'] = True;
+		$_SESSION['regErr']['password'] = False;
 		$kill = True;
 	}
+	else
+	{
+		$_SESSION['regErr']['password'] = $_POST['password'];
+	}
+	
 	if(empty($_POST['address']))
 	{
-		$_SESSION['regErr']['address'] = True;
+		$_SESSION['regErr']['address'] = False;
 		$kill = True;
 	}
+	else
+	{
+		$_SESSION['regErr']['address'] = $_POST['address'];
+	}
+	
 	if(empty($_POST['phoneNumber']))
 	{
-		$_SESSION['regErr']['phoneNumber'] = True;
+		$_SESSION['regErr']['phoneNumber'] = False;
 		$kill = True;	
 	}
+	else
+	{
+		$_SESSION['regErr']['phoneNumber'] = $_POST['phoneNumber'];
+	}
+	
 	if(empty($_POST['email']))
 	{
-		$_SESSION['regErr']['email'] = True;
+		$_SESSION['regErr']['email'] = False;
 		$kill = True;	
 	}
+	else
+	{
+		$_SESSION['regErr']['email'] = $_POST['email'];
+	}
+	
 	if(empty($_POST['fullName']))
 	{
-		$_SESSION['regErr']['fullName'] = True;
+		$_SESSION['regErr']['fullName'] = False;
 		$kill = True;
+	}
+	else
+	{
+		$_SESSION['regErr']['fullName'] = $_POST['fullName'];
 	}
 	
 	

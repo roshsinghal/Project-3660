@@ -1,6 +1,80 @@
 <?php
+session_start(); // Starting Session
+
 	$username = 'group7';
 	$password = 'zpakwn';
+	$_SESSION['regErr'] = array();
+	
+	if(empty($_POST['userName']))
+	{
+		$_SESSION['regErr']['userName'] = False;
+		$kill = True;	
+	}
+	else
+	{
+		$_SESSION['regErr']['userName'] = $_POST['userName'];
+	}
+	
+	if(empty($_POST['password']))
+	{
+		$_SESSION['regErr']['password'] = False;
+		$kill = True;
+	}
+	else
+	{
+		$_SESSION['regErr']['password'] = $_POST['password'];
+	}
+	
+	if(empty($_POST['address']))
+	{
+		$_SESSION['regErr']['address'] = False;
+		$kill = True;
+	}
+	else
+	{
+		$_SESSION['regErr']['address'] = $_POST['address'];
+	}
+	
+	if(empty($_POST['phoneNumber']))
+	{
+		$_SESSION['regErr']['phoneNumber'] = False;
+		$kill = True;	
+	}
+	else
+	{
+		$_SESSION['regErr']['phoneNumber'] = $_POST['phoneNumber'];
+	}
+	
+	if(empty($_POST['email']))
+	{
+		$_SESSION['regErr']['email'] = False;
+		$kill = True;	
+	}
+	else
+	{
+		$_SESSION['regErr']['email'] = $_POST['email'];
+	}
+	
+	if(empty($_POST['fullName']))
+	{
+		$_SESSION['regErr']['fullName'] = False;
+		$kill = True;
+	}
+	else
+	{
+		$_SESSION['regErr']['fullName'] = $_POST['fullName'];
+	}
+	
+	
+	if($kill)
+	{
+		header('location: register.php');
+		die();
+	}
+	else
+	{
+		unset($_SESSION['regErr']);
+	}
 
 try{
 	$conn = new PDO('mysql:host=17carson.cs.uleth.ca;dbname=group7',$username,$password);
@@ -17,6 +91,7 @@ try {
 	echo "<h3>User ";
 	echo ($_POST["userName"]);
 	echo " registered!</h3>";
+	header('location: index.php');
 
 } catch (Exception $e) {
   $conn->rollBack();

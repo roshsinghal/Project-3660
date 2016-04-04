@@ -97,8 +97,13 @@
 	<li><input type="text" name="search" value="" size=100/></li>
 	<?php 
 		
-		if(!empty($_SESSION['login_user']))	
-			echo "<li>Hello, $_SESSION[login_user]</li>";
+		if(!empty($_SESSION['login_user']))
+		{
+			echo "<li>Hello, $_SESSION[login_user]";
+			if($_SESSION['is_admin'])
+				echo ", ADMIN";
+			echo "</li>";
+		}
 		
 	?>
    </form>

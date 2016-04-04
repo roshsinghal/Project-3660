@@ -87,7 +87,9 @@
 	<?php 
 		
 		if(!empty($_SESSION['login_user']))	
-			echo "<li>Hello, $_SESSION[login_user], $_SESSION[is_admin]</li>";
+			echo "<li>Hello, $_SESSION[login_user], "
+			echo var_export($_SESSION['is_admin'], true);
+			echo "</li>";
 		
 	?>
    </form>

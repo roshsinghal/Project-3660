@@ -37,6 +37,7 @@
 	if($kill)
 	{
 		header('location: register.php');
+		die();
 	}
 
 try{

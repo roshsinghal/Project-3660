@@ -1,5 +1,11 @@
 <?php
 session_start(); // Starting Session
+if(isset($_SESSION['regErr']))
+{
+	$regErr = $_SESSION['regErr'];
+	//destroy this immediately before bad things happen
+	unset($_SESSION['regErr']);
+}
 
 if(!empty($_SESSION['login_user']))
 {
@@ -26,12 +32,32 @@ Register|Book Rental Service
 
 <form action="addCustomer.php" method="post">
 <br>
-Username: <input type="text" name="userName"><br>
-Password: <input type="text" name="password"><br>
-Full Name: <input type="text" name="fullName"><br>
-Email: <input type="text" name="email"><br>
-Address: <input type="text" name="address"><br>
-Phone Number: <input type="text" name="phoneNumber"><br>
+<?php
+echo 'Username: <input type="text" name="userName">';
+if($regErr['userName'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+echo 'Password: <input type="text" name="password">';
+if($regErr['password'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+echo 'Full Name: <input type="text" name="fullName">';
+if($regErr['fullName'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+echo 'Email: <input type="text" name="email">';
+if($regErr['email'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+echo 'Address: <input type="text" name="address">';
+if($regErr['address'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+echo 'Phone Number: <input type="text" name="phoneNumber">';
+if($regErr['phoneNumber'])
+	echo ' <font color=red>* Cannot be empty!</font>';
+echo '<br>';
+?>
 <input type="submit" value="Submit">
 </form>
 </body>

@@ -1,6 +1,43 @@
 <?php
 	$username = 'group7';
 	$password = 'zpakwn';
+	
+	if(empty($_POST['userName']))
+	{
+		$_SESSION['regErr']['userName'] = True;
+		$kill = True;	
+	}
+	if(empty($_POST['password']))
+	{
+		$_SESSION['regErr']['password'] = True;
+		$kill = True;
+	}
+	if(empty($_POST['address']))
+	{
+		$_SESSION['regErr']['address'] = True;
+		$kill = True;
+	}
+	if(empty($_POST['phoneNumber']))
+	{
+		$_SESSION['regErr']['phoneNumber'] = True;
+		$kill = True;	
+	}
+	if(empty($_POST['email']))
+	{
+		$_SESSION['regErr']['email'] = True;
+		$kill = True;	
+	}
+	if(empty($_POST['fullName']))
+	{
+		$_SESSION['regErr']['fullName'] = True;
+		$kill = True;
+	}
+	
+	
+	if($kill)
+	{
+		header('location: register.php');
+	}
 
 try{
 	$conn = new PDO('mysql:host=17carson.cs.uleth.ca;dbname=group7',$username,$password);
@@ -17,6 +54,7 @@ try {
 	echo "<h3>User ";
 	echo ($_POST["userName"]);
 	echo " registered!</h3>";
+	header('location: index.php');
 
 } catch (Exception $e) {
   $conn->rollBack();

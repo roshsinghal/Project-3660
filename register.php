@@ -1,6 +1,6 @@
 <?php
 session_start(); // Starting Session
-if(isset($_SESSION['regErr']))
+if($_SESSION['regErr'])
 {
 	$regErr = $_SESSION['regErr'];
 	//destroy this immediately before bad things happen

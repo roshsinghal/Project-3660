@@ -87,7 +87,7 @@
 	<?php 
 		
 		if(!empty($_SESSION['login_user']))	
-			echo "<li>Hello, $_SESSION[login_user]</li>";
+			echo "<li>Hello, $_SESSION[login_user], $_SESSION[is_admin]</li>";
 		
 	?>
    </form>

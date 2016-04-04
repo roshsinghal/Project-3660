@@ -77,10 +77,21 @@
 
 	})
 </script>
-
-	<li><a href="#">Manage</a></li>
-	<li><a href="#Help">Help</a></li>
+  		
+	<li><a href="#Help">FAQ</a></li>
 	<li><a class="active" href="index.php">Home</a></li>
+
+	<div class="dropdown">
+	<li><a href="#" >Manage</a>
+		<div class="dropdown-content">
+		<ul>
+			<p><a class="active" href="updateCustomer.php">Update Info</a></p>
+			<p><a class="active" href="checkout.php">Checkout</a></p>
+		</ul>
+		</div>
+	</li>
+	</div>
+
 	<form action="index.php" method="get">
 	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
 	<li><input type="text" name="search" value="" size=100/></li>

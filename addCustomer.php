@@ -1,6 +1,7 @@
 <?php
 	$username = 'group7';
 	$password = 'zpakwn';
+	$_SESSION['regErr'] = array();
 	
 	if(empty($_POST['userName']))
 	{
@@ -38,6 +39,10 @@
 	{
 		header('location: register.php');
 		die();
+	}
+	else
+	{
+		unset($_SESSION['regErr']);
 	}
 
 try{

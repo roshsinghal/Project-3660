@@ -10,6 +10,7 @@ if($_SESSION['regErr'])
 if(!$_SESSION['is_admin'])
 {
 	header('location: index.php');
+	die();
 }
 ?>
 <html>

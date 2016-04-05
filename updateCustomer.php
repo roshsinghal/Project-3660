@@ -4,6 +4,7 @@ session_start(); // Starting Session
 if(empty($_SESSION['login_user']))
 {
 	header('location: index.php');
+	die();
 }
 ?>
 <html>

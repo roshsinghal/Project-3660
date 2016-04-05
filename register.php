@@ -10,6 +10,7 @@ if($_SESSION['regErr'])
 if(!empty($_SESSION['login_user']))
 {
 	header('location: index.php');
+	die();
 }
 ?>
 <html>

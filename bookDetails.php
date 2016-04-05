@@ -36,7 +36,26 @@ Book Rental Service
 		}
 		else
 		{
-			echo "<p>$val[4] copies available</p>";
+			if($val[4] == 1)
+				echo "<p>1 copy available</p>";
+			elseif($val[4] == 0)
+				echo "<p>No copies available</p>";
+			else
+				echo "<p>$val[4] copies available</p>";
+				
+			if(!empty($_SESSION['login_user']))
+			{
+				if(!$_SESSION['is_admin'])
+				{
+					if($val[4] > 0)
+					{
+						echo "<form action=\"orderBook.php\" method=\"post\">";
+						echo "<input type=\"hidden\" name=\"bookID\" value=\"$_REQUEST[selectID]\">";
+						echo "<input class=\"orderButton\" type=\"submit\" value=\"Submit\">";
+						echo "</form>";
+					}
+				}
+			}
 		}
 	}
 	else

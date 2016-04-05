@@ -1,17 +1,11 @@
 <?php
-session_start(); // Starting Session
-
-if(empty($_SESSION['is_admin']))
+	session_start(); // Starting Session
+	
+if(empty($_SESSION['login_user']))
 {
 	header('location: index.php');
 	die();
 }
-if(!$_SESSION['is_admin'])
-{
-	header('location: index.php');
-	die();
-}
-
 ?>
 <html>
 
@@ -22,23 +16,23 @@ if(!$_SESSION['is_admin'])
 </head>
 
 <title>
-Manage Copies|Book Service Rental
+Book Rental Service
 </title>
 <body>
-
-<?php
- 	require 'navigation.php';
-?>
-
-<h1 align="center">Select a Book</h1>
 <?php 
-	if("" == trim($_REQUEST["search"]))
+	require 'navigation.php';
+
+	if(!isset($_REQUEST["search"]))
 	{
-		$booksearch = "*";
+	 $booksearch = "1=1";
+	}
+	elseif("" == trim($_REQUEST["search"]))
+	{
+		$booksearch = "1=1";
 	}
 	else
 	{
-		$booksearch = $_REQUEST["search"];
+		$booksearch = "title like '%$_REQUEST[search]%'";
 	}
 
 	
@@ -48,7 +42,14 @@ Manage Copies|Book Service Rental
 	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
 	mysql_select_db($username,$conn); 
 
-	$sql = "select title, publisher, isbn, number_available, book_id from book_details"; 
+	$sql = "select  
+	bd.title, 
+	bd.isbn, 
+	bd.publisher,
+	ba.date_rented
+	from book_details bd 
+	inner join orders ba on bd.book_id=ba.book_id
+	where ba.user_id='$_SESSION[login_user]'"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
@@ -57,30 +58,27 @@ Manage Copies|Book Service Rental
      echo '<th>Title</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
-	 echo '<th>Available</th>';
-	 echo '<th>Book ID</th>';
+	 echo '<th>Date Rented</th>';
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
-	 {
+	 {;
 		echo '<tr align="center">';
-    	echo "<td>$val[0]</td>";
+		echo "<td>";
+    	echo "$val[0]";
+		echo "</td>";
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
-		echo "<form action=\"deleteCopy.php\" method=\"post\">";
-		echo "<td><input type=\"text\" name=\"bookID\" id=\"bookID\" value=\"$val[4]\" readonly></td>";
-		echo "<td><input type=\"submit\" value=\"Manage Copies\"></td>";
-		echo "</form>";
-		echo "<td></td>";
 		echo '</tr>';
 	 }
 	} 
 	else
 	{
-		echo '<p>No books match criteria.</p>'; 
+		echo '<p>No orders have been placed.</p>'; 
 	}
 	
 	mysql_close($conn);
 ?>
+
 </body>
 </html>

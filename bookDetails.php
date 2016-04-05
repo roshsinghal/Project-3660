@@ -22,7 +22,7 @@ Book Rental Service
 	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
 	mysql_select_db($username,$conn); 
 
-	$sql = "select * from book_details book_id=$_REQUEST[selectID]"; 
+	$sql = "select * from book_details book_id='$_REQUEST[selectID]'"; 
 	$result = mysql_query($sql,$conn);
 	if(mysql_num_rows($result) > 0)
 	{

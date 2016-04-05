@@ -85,8 +85,19 @@
 	<li><a href="#" >Manage</a>
 		<div class="dropdown-content">
 		<ul>
-			<p><a class="active" href="updateCustomer.php">Update Info</a></p>
-			<p><a class="active" href="checkout.php">Checkout</a></p>
+		<?php
+			if(!$_SESSION['is_admin'])
+			{	
+				echo '<p><a class="active" href="updateCustomer.php">Update Info</a></p>';
+				echo '<p><a class="active" href="checkout.php">Checkout</a></p>';
+			}
+			else
+			{
+				echo '<p><a class="active" href="manageBook.php">Manage Books</a></p>';
+				echo '<p><a class="active" href="deleteBook.php">Manage Copies</a></p>';
+				echo '<p><a class="active" href="addAdmin.php">Add Admin</a></p>';
+			}
+		?>
 		</ul>
 		</div>
 	</li>

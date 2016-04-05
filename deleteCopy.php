@@ -28,7 +28,7 @@ Manage Copy|Book Service Rental
  require 'navigation.php';
 ?>
 
-<h1 align="center">Manage Copies</h1>
+<h1 align="center">Insert Copies</h1>
 <?php 
 	
 	$username = 'group7';
@@ -54,7 +54,6 @@ Manage Copy|Book Service Rental
      echo '<th>ISBN</th>';
 	 echo '<th>Book ID</th>';
 	 echo '<th>Copy ID</th>';
-	 echo '<th>Reason</th>';
   	 echo '</tr>';
 	 echo '<tr align="center">';
 	 $result = mysql_query("select title, publisher, isbn from book_details where book_id='$_POST[bookID]'",$conn);
@@ -69,7 +68,20 @@ Manage Copy|Book Service Rental
 		echo "</form>";
 		echo "<td></td>";
 		echo '</tr>';
+	echo '</table>';
 	$result = mysql_query($sql,$conn);
+	if(mysql_num_rows($result) > 0)
+	{
+	 echo '<h1 align="center">Delete Copies</h1>';
+	 echo '<table style="width:100%">';
+  	 echo '<tr align="center">';
+     echo '<th>Title</th>';
+     echo '<th>Publisher</th>';		
+     echo '<th>ISBN</th>';
+	 echo '<th>Book ID</th>';
+	 echo '<th>Copy ID</th>';
+	 echo '<th>Reason</th>';
+  	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {
 		echo '<tr align="center">';
@@ -85,6 +97,8 @@ Manage Copy|Book Service Rental
 		echo "<td></td>";
 		echo '</tr>';
 	 }
+	 echo '</table>';
+	}
 	
 	mysql_close($conn);
 ?>

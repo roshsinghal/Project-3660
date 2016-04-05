@@ -36,7 +36,7 @@ Book Rental Service
 	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
 	mysql_select_db($username,$conn); 
 
-	$sql = "select title, publisher, isbn, number_available from book_details where archived !=1 and $booksearch order by title"; 
+	$sql = "select title, publisher, isbn, number_available, book_id from book_details where archived !=1 and $booksearch order by title"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
@@ -49,12 +49,15 @@ Book Rental Service
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {
+	    echo "<form action=\"bookDetails.php\" method=\"get\">";
+		echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[4]\">";
 		echo '<tr align="center">';
-    	echo "<td>$val[0]</td>";
+    	echo "<td><a href=\"#\" onclick='this.parentNode.submit(); return false;'>$val[0]</a></td>";
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
 		echo '</tr>';
+		echo "</form>";
 	 }
 	} 
 	else

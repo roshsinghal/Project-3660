@@ -24,6 +24,7 @@ try {
 
 	
 	echo "<h3>Order placed.</h3>";
+	header('location: showOrders.php');
 
 } catch (Exception $e) {
   $conn->rollBack();

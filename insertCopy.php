@@ -19,7 +19,7 @@ try {
 	
 	echo "<h3>Copy ";
 	echo ($_POST["copyID"]);
-	echo " deleted!</h3>";
+	echo " inserted!</h3>";
 
 } catch (Exception $e) {
   $conn->rollBack();

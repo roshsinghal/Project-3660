@@ -20,7 +20,7 @@ if(!$_SESSION['is_admin'])
 </head>
 
 <title>
-Delete Book|Book Service Rental
+Manage Copies|Book Service Rental
 </title>
 <body>
 
@@ -28,7 +28,7 @@ Delete Book|Book Service Rental
  	require 'navigation.php';
 ?>
 
-<h1 align="center">Delete a Book</h1>
+<h1 align="center">Select a Book</h1>
 <?php 
 	if("" == trim($_REQUEST["search"]))
 	{
@@ -65,7 +65,7 @@ Delete Book|Book Service Rental
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
-		echo "<form action=\"deleteCopy.php\" method=\"delete\">";
+		echo "<form action=\"deleteCopy.php\" method=\"post\">";
 		echo "<td><input type=\"text\" name=\"bookID\" id=\"bookID\" value=\"$val[4]\" readonly></td>";
 		echo "<td><input type=\"submit\" value=\"Manage Copies\"></td>";
 		echo "</form>";

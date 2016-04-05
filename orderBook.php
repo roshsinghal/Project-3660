@@ -17,7 +17,7 @@ try {
 	$q = $conn->query("select copy_id from book_availability where book_id='$_POST[bookID]' and availability_status=1");
 	$q->setFetchMode(PDO::FETCH_LAZY);
 	$r = $q->fetch();
-	$conn->exec("insert into orders (book_id,copy_id,date_rented,user_id) values('$_POST[bookID]','$r[0]',get current date,'$_SESSION[login_user]')");
+	$conn->exec("insert into orders (book_id,copy_id,date_rented,user_id) values('$_POST[bookID]','$r[0]', 	CURDATE(),'$_SESSION[login_user]')");
 	$conn->exec("update book_availability set availability_status=0 where book_id='$_POST[bookID]' and copy_id='$r[0]'");
 	$conn->exec("update book_details set number_available=number_available-1 where book_id='$_POST[bookID]'");
 	$conn->commit();

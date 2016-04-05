@@ -51,7 +51,7 @@ Book Rental Service
 					{
 						echo "<form action=\"orderBook.php\" method=\"post\">";
 						echo "<input type=\"hidden\" name=\"bookID\" value=\"$_REQUEST[selectID]\">";
-						echo "<input class=\"orderButton\" type=\"submit\" value=\"Submit\">";
+						echo "<input class=\"orderButton\" type=\"submit\" value=\"Order\">";
 						echo "</form>";
 					}
 				}

@@ -1,6 +1,11 @@
 <?php
 	$username = 'group7';
 	$password = 'zpakwn';
+	if(empty($_POST['bookID']))
+	{
+		header('location: manageBook.php');
+		die();
+	}
 
 try{
 	$conn = new PDO('mysql:host=17carson.cs.uleth.ca;dbname=group7',$username,$password);
@@ -9,6 +14,13 @@ try{
 }
 try {
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	$_POST['bookID'] = mysql_real_escape_string($_POST['bookID']);
+	$_POST['archived'] = mysql_real_escape_string($_POST['archived']);
+	$_POST['title'] = mysql_real_escape_string($_POST['title']);
+	$_POST['isbn'] = mysql_real_escape_string($_POST['isbn']);
+	$_POST['publisher'] = mysql_real_escape_string($_POST['publisher']);
+	$_POST['author'] = mysql_real_escape_string($_POST['author']);
 
 	$conn->beginTransaction();;
 	$conn->exec("insert into book_details (book_id, archived, title, isbn, publisher, author) values ('$_POST[bookID]','$_POST[archived]','$_POST[title]','$_POST[isbn]', '$_POST[publisher]', '$_POST[author]')");

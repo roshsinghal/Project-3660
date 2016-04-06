@@ -58,7 +58,7 @@ Book Rental Service
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
-	 echo '<th>Author</th>';
+	 echo '<th>Author(s)</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';

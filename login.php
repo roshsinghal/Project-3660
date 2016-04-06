@@ -12,8 +12,8 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 else
 {
 	// Define $username and $password
-	$username="$_POST[username]";
-	$password="$_POST[password]";
+	$username=mysql_real_escape_string($_POST['username']);
+	$password=mysql_real_escape_string($_POST['password]']);
 	
 	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 	$connection = mysql_connect('17carson.cs.uleth.ca', 'group7', 'zpakwn');

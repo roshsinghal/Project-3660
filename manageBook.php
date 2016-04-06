@@ -55,6 +55,7 @@ Manage Book|Book Service Rental
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Available</th>';
@@ -65,6 +66,7 @@ Manage Book|Book Service Rental
 	 	 	echo '<tr align="center">';
 		echo "<form action=\"insertBook.php\" method=\"post\">";
 		echo "<td><input type=\"text\" name=\"title\" value=\"\"></td>";
+		echo "<td><input type=\"text\" name=\"author\" value=\"\"></td>";
 		echo "<td><input type=\"text\" name=\"publisher\" value=\"\"></td>";
 		echo "<td><input type=\"text\" name=\"isbn\" value=\"\"></td>";
 		echo "<td><input type=\"text\" name=\"available\" value=\"0\" readonly></td>";
@@ -81,6 +83,7 @@ Manage Book|Book Service Rental
 		echo '<h1 align="center">Manage Book</h1>';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Available</th>';
@@ -95,6 +98,7 @@ Manage Book|Book Service Rental
 		echo '<tr align="center">';
 		echo "<form action=\"updateBook.php\" method=\"post\">";
 		echo "<td><input type=\"text\" name=\"title\" value=\"$val[3]\"></td>";
+		echo "<td><input type=\"text\" name=\"author\" value=\"$val[7]\"></td>";
 		echo "<td><input type=\"text\" name=\"publisher\" value=\"$val[5]\"></td>";
 		echo "<td><input type=\"text\" name=\"isbn\" value=\"$val[4]\"></td>";
 		echo "<td><input type=\"text\" name=\"available\" value=\"$val[1]\" readonly></td>";

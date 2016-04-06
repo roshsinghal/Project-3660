@@ -44,9 +44,10 @@ Book Rental Service
 
 	$sql = "select  
 	bd.title, 
-	bd.isbn, 
 	bd.publisher,
+	bd.isbn, 
 	ba.date_rented
+	bd.author
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
 	where ba.user_id='$_SESSION[login_user]' and ba.returned=1"; 
@@ -56,6 +57,7 @@ Book Rental Service
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';
@@ -67,6 +69,7 @@ Book Rental Service
 		echo "<td>";
     	echo "$val[0]";
 		echo "</td>";
+		echo "<td>$val[4]</td>";
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";

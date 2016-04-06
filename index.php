@@ -15,6 +15,7 @@ Book Rental Service
 <body>
 <?php 
 	require 'navigation.php';
+	$_REQUEST['search'] = mysql_real_escape_string($_REQUEST['search']);
 
 	if(!isset($_REQUEST["search"]))
 	{

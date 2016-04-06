@@ -83,8 +83,15 @@ try{
 }
 try {
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	$_POST['userName'] = mysql_real_escape_string($_POST['userName']);
+	$_POST['password'] = mysql_real_escape_string($_POST['password']);
+	$_POST['address'] = mysql_real_escape_string($_POST['address']);
+	$_POST['phoneNumber'] = mysql_real_escape_string($_POST['phoneNumber']);
+	$_POST['email'] = mysql_real_escape_string($_POST['email']);
+	$_POST['fullName'] = mysql_real_escape_string($_POST['fullName']);
 
-	$conn->beginTransaction();;
+	$conn->beginTransaction();
 	$conn->exec("insert into users (user_name, password, address, phone_number, e_mail, full_name, is_admin) values ('$_POST[userName]','$_POST[password]','$_POST[address]','$_POST[phoneNumber]','$_POST[email]', '$_POST[fullName]', 1)");
 	$conn->commit();
 	

@@ -9,6 +9,9 @@ try{
 }
 try {
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	$_POST['bookID'] = mysql_real_escape_string($_POST['bookID']);
+	$_POST['copyID'] = mysql_real_escape_string($_POST['copyID']);
 
 	$conn->beginTransaction();;
 	$conn->exec("insert into book_availability (copy_id,book_id,availability_status) values ('$_POST[copyID]','$_POST[bookID]',1)");

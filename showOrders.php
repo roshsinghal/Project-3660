@@ -46,7 +46,9 @@ Book Rental Service
 	bd.title, 
 	bd.isbn, 
 	bd.publisher,
-	ba.date_rented
+	ba.date_rented,
+	ba.returned,
+	ba.book_id
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
 	where ba.user_id='$_SESSION[login_user]'"; 
@@ -59,6 +61,7 @@ Book Rental Service
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';
+	 echo '<th>Returned?</th>';
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {;
@@ -69,12 +72,24 @@ Book Rental Service
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
+		if($val[4])
+			echo "<td>Yes</td>";
+		else
+		{
+			echo "<td>No</td>";
+			echo "<td>";
+			echo "<form action=\"returnBook.php\" method=\"post\">";
+			echo "<input type=\"hidden\" name=\"orderID\" value=\"$val[4]\">";
+			echo "<input class=\"returnButton\" type=\"submit\" value=\"Return\">";
+			echo "</form>";
+			echo "</td>";
+		}
 		echo '</tr>';
 	 }
 	} 
 	else
 	{
-		echo '<p>No orders have been placed.</p>'; 
+		echo '<p>There is no order history for this user.</p>'; 
 	}
 	
 	mysql_close($conn);

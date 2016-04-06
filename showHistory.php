@@ -46,7 +46,7 @@ Book Rental Service
 	bd.title, 
 	bd.isbn, 
 	bd.publisher,
-	ba.date_rented,
+	ba.date_rented
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
 	where ba.user_id='$_SESSION[login_user]' and ba.returned=1"; 

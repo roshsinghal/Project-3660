@@ -1,6 +1,8 @@
 <ul>
 	<div class="container">
-
+	<header class="banner">
+	<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo"></a>
+	</header>
 	<?php 
 		
 		if(!empty($_SESSION['login_user']))	

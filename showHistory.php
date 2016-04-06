@@ -49,7 +49,7 @@ Book Rental Service
 	ba.date_rented,
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
-	where ba.user_id='$_SESSION[login_user]' and where ba.returned=1"; 
+	where ba.user_id='$_SESSION[login_user]' and ba.returned=1"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{

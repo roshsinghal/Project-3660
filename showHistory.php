@@ -48,6 +48,7 @@ Book Rental Service
 	bd.isbn, 
 	ba.date_rented
 	bd.author
+	ba.date_returned
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
 	where ba.user_id='$_SESSION[login_user]' and ba.returned=1"; 
@@ -73,7 +74,7 @@ Book Rental Service
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
-		echo "<td>-</td>";
+		echo "<td>$val[5]</td>";
 		echo '</tr>';
 	 }
 	} 

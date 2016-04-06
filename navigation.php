@@ -89,7 +89,8 @@
 			if(!$_SESSION['is_admin'])
 			{	
 				echo '<p><a class="active" href="updateCustomer.php">Update Info</a></p>';
-				echo '<p><a class="active" href="checkout.php">Checkout</a></p>';
+				echo '<p><a class="active" href="showOrders.php">Checkout List</a></p>';
+				echo '<p><a class="active" href="showHistory.php">Order History</a></p>';
 			}
 			else
 			{

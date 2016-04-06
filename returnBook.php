@@ -23,7 +23,7 @@ try {
 	$conn->commit();
 
 	
-	echo "<h3>Order placed.</h3>";
+	echo "<h3>Book returned.</h3>";
 	header('location: showOrders.php');
 
 } catch (Exception $e) {

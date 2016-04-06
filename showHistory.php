@@ -46,8 +46,8 @@ Book Rental Service
 	bd.title, 
 	bd.publisher,
 	bd.isbn, 
-	ba.date_rented
-	bd.author
+	ba.date_rented,
+	bd.author,
 	ba.date_returned
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id

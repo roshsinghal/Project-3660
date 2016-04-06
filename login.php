@@ -12,8 +12,8 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 else
 {
 	// Define $username and $password
-	$username=mysql_real_escape_string($_POST['username']);
-	$password=mysql_real_escape_string($_POST['password]']);
+	$username=mysql_escape_string($_POST['username']);
+	$password=mysql_escape_string($_POST['password]']);
 	
 	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 	$connection = mysql_connect('17carson.cs.uleth.ca', 'group7', 'zpakwn');
@@ -21,8 +21,8 @@ else
 	// To protect MySQL injection for Security purpose
 	$username = stripslashes($username);
 	$password = stripslashes($password);
-	$username = mysql_real_escape_string($username);
-	$password = mysql_real_escape_string($password);
+	$username = mysql_escape_string($username);
+	$password = mysql_escape_string($password);
 	
 	// Selecting Database
 	$db = mysql_select_db('group7', $connection);

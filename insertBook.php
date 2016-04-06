@@ -15,11 +15,11 @@ try{
 try {
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
-	$_POST['bookID'] = mysql_real_escape_string($_POST['bookID']);
-	$_POST['title'] = mysql_real_escape_string($_POST['title']);
-	$_POST['isbn'] = mysql_real_escape_string($_POST['isbn']);
-	$_POST['publisher'] = mysql_real_escape_string($_POST['publisher']);
-	$_POST['author'] = mysql_real_escape_string($_POST['author']);
+	$_POST['bookID'] = mysql_escape_string($_POST['bookID']);
+	$_POST['title'] = mysql_escape_string($_POST['title']);
+	$_POST['isbn'] = mysql_escape_string($_POST['isbn']);
+	$_POST['publisher'] = mysql_escape_string($_POST['publisher']);
+	$_POST['author'] = mysql_escape_string($_POST['author']);
 
 	$conn->beginTransaction();;
 	$conn->exec("insert into book_details (book_id, archived, title, isbn, publisher, author) values ('$_POST[bookID]',0,'$_POST[title]','$_POST[isbn]', '$_POST[publisher]', '$_POST[author]')");

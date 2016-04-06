@@ -11,7 +11,7 @@ try {
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$conn->beginTransaction();;
-	$conn->exec("insert into book_details (book_id, archived, title, isbn, publisher) values ('$_POST[bookID]','$_POST[archived]','$_POST[title]','$_POST[isbn]', '$_POST[publisher]')");
+	$conn->exec("insert into book_details (book_id, archived, title, isbn, publisher, author) values ('$_POST[bookID]','$_POST[archived]','$_POST[title]','$_POST[isbn]', '$_POST[publisher]', '$_POST[author]')");
 	$conn->commit();
 	
 	echo "<h3>Book ";

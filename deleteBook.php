@@ -48,13 +48,14 @@ Manage Copies|Book Service Rental
 	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
 	mysql_select_db($username,$conn); 
 
-	$sql = "select title, publisher, isbn, number_available, book_id from book_details"; 
+	$sql = "select title, publisher, isbn, number_available, book_id, author from book_details"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Available</th>';
@@ -64,6 +65,7 @@ Manage Copies|Book Service Rental
 	 {
 		echo '<tr align="center">';
     	echo "<td>$val[0]</td>";
+		echo "<td>$val[5]</td>";
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";

@@ -45,24 +45,27 @@ Manage Copy|Book Service Rental
 	bd.isbn , 
 	bd.publisher,
 	ba.copy_id,
-	ba.availability_status
+	ba.availability_status,
+	bd.author
 	from book_details bd 
 	inner join book_availability ba on bd.book_id=ba.book_id
 	where bd.book_id='$_POST[bookID]';"; 
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';	
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Book ID</th>';
 	 echo '<th>Copy ID</th>';
   	 echo '</tr>';
 	 echo '<tr align="center">';
-	 $result = mysql_query("select title, publisher, isbn from book_details where book_id='$_POST[bookID]'",$conn);
+	 $result = mysql_query("select title, author, publisher, isbn from book_details where book_id='$_POST[bookID]'",$conn);
 	 $val = mysql_fetch_row($result);
     	echo "<td>$val[0]</td>";
-    	echo "<td>$val[1]</td>";		
-    	echo "<td>$val[2]</td>";
+		echo "<td>$val[1]</td>";
+    	echo "<td>$val[2]</td>";		
+    	echo "<td>$val[3]</td>";
 		echo "<form action=\"insertCopy.php\" method=\"post\">";
 		echo "<td><input type=\"text\" name=\"bookID\" value=\"$_POST[bookID]\" readonly></td>";
 		echo "<td><input type=\"text\" name=\"copyID\"></td>";
@@ -78,6 +81,7 @@ Manage Copy|Book Service Rental
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
+	 echo '<th>Author</th>';
      echo '<th>Publisher</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Book ID</th>';
@@ -88,6 +92,7 @@ Manage Copy|Book Service Rental
 	 {
 		echo '<tr align="center">';
     	echo "<td>$val[2]</td>";
+		echo "<td>$val[7]</td>";
     	echo "<td>$val[4]</td>";		
     	echo "<td>$val[3]</td>";
 		echo "<form action=\"deleteCopy2.php\" method=\"post\">";

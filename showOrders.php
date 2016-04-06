@@ -72,7 +72,7 @@ Book Rental Service
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
-		if($val[4])
+		if($val[4] == 1)
 			echo "<td>Yes</td>";
 		else
 		{

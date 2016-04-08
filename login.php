@@ -43,7 +43,7 @@ else
 		}
 			//header("location: index.php"); // Redirecting To Other Page
 	} else {
-		$error = "Username or Password is invalid";
+		$error = "Username $username or Password $password is invalid";
 	}
 	mysql_close($connection); // Closing Connection
 }

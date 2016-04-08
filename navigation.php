@@ -32,6 +32,9 @@
 			<!-- Username & Password Login form -->
 			<div class="user_login">
 				<form action="login.php" method="post">
+					<?php 
+						echo "<input type=\"hidden\" name=\"lastPage\" value=\"$_SERVER[REQUEST_URI]\">";
+					?>
 					<label>Username</label>
 					<input type="text" name="username" />
 					<br />

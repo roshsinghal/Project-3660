@@ -57,6 +57,12 @@ Book Rental Service
 					}
 				}
 			}
+			else
+			{
+				echo "<form action=\"#modal\" method=\"post\">";
+				echo "<input class=\"orderButton\" type=\"submit\" value=\"Order\">";
+				echo "</form>";
+			}
 		}
 	}
 	else

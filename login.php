@@ -49,5 +49,5 @@ else
 }
 //echo $error;
 if($error != '') header('location: index.php?error=' . $error);
-else header('location: index.php');
+else header("location: $_POST[lastPage]");
 ?>

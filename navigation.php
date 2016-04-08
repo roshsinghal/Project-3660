@@ -32,9 +32,6 @@
 			<!-- Username & Password Login form -->
 			<div class="user_login">
 				<form action="login.php" method="post">
-					<?php 
-						echo "<input type=\"hidden\" name=\"lastPage\" value=\"$_SERVER[REQUEST_URI]\">";
-					?>
 					<label>Username</label>
 					<input type="text" name="username" />
 					<br />
@@ -42,6 +39,10 @@
 					<label>Password</label>
 					<input type="password" name="password" />
 					<br />
+					
+					<?php 
+						echo "<input type=\"hidden\" name=\"lastPage\" value=\"$_SERVER[REQUEST_URI]\">";
+					?>
 
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>

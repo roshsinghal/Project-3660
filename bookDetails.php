@@ -59,7 +59,7 @@ Book Rental Service
 			}
 			else
 			{
-				echo "<button type=\"button\" onclick=\"location.href='#modal';\">Order</button>";
+				echo "<button id=\"modal_trigger\" type=\"button\">Order</button>";
 			}
 		}
 	}

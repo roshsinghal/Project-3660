@@ -13,7 +13,7 @@ else
 {
 	// Define $username and $password
 	$username=mysql_escape_string($_POST['username']);
-	$password=mysql_escape_string($_POST['password]']);
+	$password=mysql_escape_string($_POST['password']);
 	
 	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 	$connection = mysql_connect('17carson.cs.uleth.ca', 'group7', 'zpakwn');

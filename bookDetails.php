@@ -59,7 +59,8 @@ Book Rental Service
 			}
 			else
 			{
-				echo '<ul><li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li></ul>';
+				//ugly and non-functional, fix this
+				//echo '<ul><li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li></ul>';
 			}
 		}
 	}

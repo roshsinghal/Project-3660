@@ -31,6 +31,13 @@ li a:hover {
     background-color: #D3D7DA   ;
 }
 
+.searchB{
+
+	{
+    padding-left: 2cm;
+} 
+}
+
 .dropdown {
     
 }
@@ -71,6 +78,7 @@ li a:hover {
 }
 
 #modal_trigger {margin:4px auto; width:55px; display:block;}
+#trigger_mod {margin:4px auto; width:55px; display:block;}
 
 .btn {padding:10px 20px; background: #F4F4F2;}
 .btn_log {padding:10px 10px;}

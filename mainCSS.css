@@ -7,12 +7,17 @@ body {
 		margin-top: 0px;
 }
 
+#bookcontainer{
+	width: 960px;
+	margin:auto;
+	background-color: grey;
+	overflow:;
+}
+
 #container{
-	width: auto;
-	height: 1000px;
+	width: 1020px;
 	margin:auto;
 	background-color: white;
-	border:1px solid #000000;
 	overflow:hidden;
 }
 

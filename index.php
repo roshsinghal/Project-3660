@@ -51,8 +51,9 @@ Book Rental Service
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {;
+		echo '<div id="bookcontainer">';
 		echo '<tr align="center">';
-		echo "<td>";
+		echo '<td>';
 		echo "<form action=\"bookDetails.php\" method=\"get\">";
 		echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[5]\">";
     	echo "<a href=\"#\" onclick=\"this.parentNode.submit(); return false;\">$val[0]</a>";
@@ -63,7 +64,9 @@ Book Rental Service
 		echo "<td>$val[3]</td>";
 		echo "<td>$val[4]</td>";
 		echo '</tr>';
+		echo '</div>';
 	 }
+	 echo '</table>';
 	} 
 	else
 	{

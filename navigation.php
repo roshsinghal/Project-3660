@@ -28,14 +28,43 @@
 				echo ", ADMIN";
 			echo "</li>";
 		}
+		else
+			echo "<li>Hello, Guest</li>";
 		
 		?>
 
-	<form action="index.php" method="get">
-	<li><input type="text" name="search" value="" size=100/></li>
-	<li><input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
-   </form>
-
+		<form action="index.php" method="get">
+		<li><input type="text" name="search" value="" size=100/></li>
+		<li><input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
+		</form>
+	
+		<div class="dropdown">
+		<li><a href="#" >Manage</a>
+			<div class="dropdown-content">
+			<ul>
+			<?php
+				if(!$_SESSION['is_admin'])
+				{	
+					echo '<p><a class="active" href="updateCustomer.php">Update Info</a></p>';
+					echo '<p><a class="active" href="showOrders.php">Checkout List</a></p>';
+					echo '<p><a class="active" href="showHistory.php">Order History</a></p>';
+				}
+				else
+				{
+					echo '<p><a class="active" href="manageBook.php">Manage Books</a></p>';
+					echo '<p><a class="active" href="deleteBook.php">Manage Copies</a></p>';
+					echo '<p><a class="active" href="addAdmin.php">Add Admin</a></p>';
+				}
+			?>
+			</ul>
+			</div>
+		</li>
+		</div>
+		
+		<li><a href="#help.php">FAQ</a></li>
+		
+		<li><a class="active" href="index.php">Home</a></li>
+		
 		</ul>
 	
 	</nav>
@@ -83,7 +112,6 @@
 			</div>
 		</section>
 	</div>
-</div>
 
 <script type="text/javascript">
 	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
@@ -113,34 +141,3 @@
 
 	})
 </script>
-  		
-	<li><a href="#Help">FAQ</a></li>
-	<li><a class="active" href="index.php">Home</a></li>
-	
-	<div class="dropdown">
-	<li><a href="#" >Manage</a>
-		<div class="dropdown-content">
-		<ul>
-		<?php
-			if(!$_SESSION['is_admin'])
-			{	
-				echo '<p><a class="active" href="updateCustomer.php">Update Info</a></p>';
-				echo '<p><a class="active" href="showOrders.php">Checkout List</a></p>';
-				echo '<p><a class="active" href="showHistory.php">Order History</a></p>';
-			}
-			else
-			{
-				echo '<p><a class="active" href="manageBook.php">Manage Books</a></p>';
-				echo '<p><a class="active" href="deleteBook.php">Manage Copies</a></p>';
-				echo '<p><a class="active" href="addAdmin.php">Add Admin</a></p>';
-			}
-		?>
-		</ul>
-		</div>
-	</li>
-	</div>
-
-	
-
-</ul>
-

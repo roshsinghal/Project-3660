@@ -29,7 +29,7 @@ Book Rental Service
 	}
 	else
 	{
-		$booksearch = "(title like '%$_REQUEST[search]%' or author like '%$_REQUEST[search]%' or publisher like '%$_REQUEST[search]%' or isbn like '%$_REQUEST[search]%')";
+		$booksearch = "title like '%$_REQUEST[search]%'";
 	}
 
 	
@@ -43,38 +43,26 @@ Book Rental Service
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
-	 echo '<table style="width:100%">';
-  	 echo '<tr align="center">';
-     echo '<th>Title</th>';
-	 echo '<th>Author</th>';
-     echo '<th>Publisher</th>';		
-     echo '<th>ISBN</th>';
-	 echo '<th>Available</th>';
-  	 echo '</tr>';
-	 while($val = mysql_fetch_row($result))
-	 {;
-		echo '<div id="bookcontainer">';
-		echo '<tr align="center">';
-		echo '<td>';
-		echo "<form action=\"bookDetails.php\" method=\"get\">";
-		echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[5]\">";
-    	echo "<a href=\"#\" onclick=\"this.parentNode.submit(); return false;\">$val[0]</a>";
-		echo "</form>";
-		echo "</td>";
-    	echo "<td>$val[1]</td>";		
-    	echo "<td>$val[2]</td>";
-		echo "<td>$val[3]</td>";
-		echo "<td>$val[4]</td>";
-		echo '</tr>';
-		echo '</div>';
-	 }
-	 echo '</table>';
+		 while($val = mysql_fetch_row($result))
+		 {;
+			echo '<br>';	
+			echo '<div class="bookcontainer">';
+			echo "<form action=\"bookDetails.php\" method=\"get\">";
+			echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[5]\">";
+			echo "<a href=\"#\" onclick=\"this.parentNode.submit(); return false;\"><h2>$val[0]</h2></a>";
+			echo "</form>";
+			echo "Author: $val[1]<br>";		
+			echo "Publisher: $val[2]<br>";
+			echo "ISBN: $val[3]<br>";
+			echo "Copies Available: $val[4]<br>";
+			echo '</div>';
+		 }
 	} 
 	else
 	{
 		echo '<p>No books match criteria.</p>'; 
 	}
-	
+	echo '<br>';	
 	mysql_close($conn);
 	
 ?>

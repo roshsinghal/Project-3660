@@ -27,5 +27,6 @@ Book Rental Service
 <p>You don't.</p>
 <h3>How do I get to the help page?</h3>
 <p>...</p>
+</div>
 </body>
 </html>

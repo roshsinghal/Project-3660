@@ -91,5 +91,6 @@ Book Rental Service
 	mysql_close($conn);
 ?>
 
+</div>
 </body>
 </html>

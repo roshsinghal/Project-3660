@@ -152,5 +152,6 @@ Book Rental Service
 	})
 </script>
 
+</div>
 </body>
 </html>

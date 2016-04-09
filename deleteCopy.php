@@ -109,5 +109,6 @@ Manage Copy|Book Service Rental
 	
 	mysql_close($conn);
 ?>
+</div>
 </body>
 </html>

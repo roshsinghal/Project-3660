@@ -4,9 +4,41 @@ body {
         font-family: 'Source Sans Pro', sans-serif; 
         font-size: 14px;
         background-color: #f5f5f5;
-		margin-top:0px;
+		margin-top: 0px;
 }
 
+#container{
+	width: ;
+	margin:auto;
+	background-color:#F32835  ;
+	border:1px solid #000000;
+	overflow:hidden;
+}
+
+header {
+	background-color:white;
+	text-align:left;
+	width: ;
+	height: ;
+}
+
+nav {
+	list-style-type: none;
+	padding: 0;
+    background-color:#E7E7E7;
+    border:6px solid white;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav ul{
+	margin:6px;
+    padding: 0;
+	margin-left:10px;
+}
+
+/*
 ul {
     list-style-type: none;
     margin: 0;
@@ -14,9 +46,9 @@ ul {
     overflow: hidden;
     background-color: white;
 }
-
+*/
 li {
-    float: right;
+    float: left;
 }
 
 li a {

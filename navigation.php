@@ -1,9 +1,15 @@
-<ul>
-	<div class="container">
+<div class="container">
+
 	<header class="banner">
-	<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo"></a>
+		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" height="120" width="160"></a>
 	</header>
-	<?php 
+
+	<nav>
+	
+		<ul>
+		
+		
+		<?php 
 		
 		if(!empty($_SESSION['login_user']))	
 			echo "<li><a id='logoutbttn' href='logout.php'>Logout</a></li>";
@@ -11,7 +17,31 @@
 		else
 			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
 
-	?>
+		?>
+		
+		<?php 
+		
+		if(!empty($_SESSION['login_user']))
+		{
+			echo "<li>Hello, $_SESSION[login_user]";
+			if($_SESSION['is_admin'])
+				echo ", ADMIN";
+			echo "</li>";
+		}
+		
+		?>
+
+	<form action="index.php" method="get">
+	<li><input type="text" name="search" value="" size=100/></li>
+	<li><input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
+   </form>
+
+		</ul>
+	
+	</nav>
+</div>
+	
+	
 
 	<div id="modal" class="popupContainer" style="display:none;">
 		<header class="popupHeader">
@@ -86,7 +116,7 @@
   		
 	<li><a href="#Help">FAQ</a></li>
 	<li><a class="active" href="index.php">Home</a></li>
-
+	
 	<div class="dropdown">
 	<li><a href="#" >Manage</a>
 		<div class="dropdown-content">
@@ -110,20 +140,7 @@
 	</li>
 	</div>
 
-	<form action="index.php" method="get">
-	<li><input id='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
-	<li><input type="text" name="search" value="" size=100/></li>
-	<?php 
-		
-		if(!empty($_SESSION['login_user']))
-		{
-			echo "<li>Hello, $_SESSION[login_user]";
-			if($_SESSION['is_admin'])
-				echo ", ADMIN";
-			echo "</li>";
-		}
-		
-	?>
-   </form>
+	
 
 </ul>
+

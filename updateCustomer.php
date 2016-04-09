@@ -46,7 +46,7 @@ if(!$regErr)
 	$result = mysql_query($sql,$conn);
 	$val = mysql_fetch_row($result);
 }
-echo 'Password: <input type="text" name="updatePass"';
+echo 'Password: <input type="password" name="updatePass"';
 if($regErr)
 {
 	if(!$regErr['updatePass'])

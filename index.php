@@ -29,7 +29,7 @@ Book Rental Service
 	}
 	else
 	{
-		$booksearch = "title like '%$_REQUEST[search]%'";
+		$booksearch = "(title like '%$_REQUEST[search]%' or author like '%$_REQUEST[search]%' or publisher like '%$_REQUEST[search]%' or isbn like '%$_REQUEST[search]%')";
 	}
 
 	

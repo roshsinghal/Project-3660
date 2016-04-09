@@ -51,7 +51,7 @@ Book Rental Service
 	bd.author
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
-	where ba.user_id='$_SESSION[login_user]' and ba.returned=0"; 
+	where ba.user_id='$_SESSION[login_user]' and ba.returned=0 order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{

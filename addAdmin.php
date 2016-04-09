@@ -43,7 +43,7 @@ if($regErr)
 		echo " value=\"$regErr[userName]\"";
 }
 echo '><br>';
-echo 'Password: <input type="text" name="password"';
+echo 'Password: <input type="password" name="password"';
 if($regErr)
 {
 	if(!$regErr['password'])

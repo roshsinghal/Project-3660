@@ -28,6 +28,14 @@ Book Rental Service
 	{
 		$val = mysql_fetch_row($result);
 		echo "<h1 align=\"center\">$val[0]</h1>";
+		if(file_exists("images/$_REQUEST[selectID].jpg"))
+		{
+			echo "<img src=\"images/$_REQUEST[selectID].jpg\" alt=\"$val[0]\">";
+		}
+		else
+		{
+			echo "<img src=\"images/nocover.jpg\" alt=\"$val[0]\">";
+		}
 		echo "<p>Written by $val[5]</p>";
 		echo "<p>Published by $val[1]</p>";
 		echo "<p>ISBN: $val[2]</p>";

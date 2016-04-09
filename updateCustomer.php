@@ -36,6 +36,9 @@ Update Personal Information|Book Rental Service
 <?php
 if(!$regErr)
 {
+	$username = 'group7';
+	$password = 'zpakwn';
+	
 	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
 	mysql_select_db($username,$conn); 
 

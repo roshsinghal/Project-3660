@@ -41,7 +41,7 @@ if(!$regErr)
 
 	$sql = "select password, address, phone_number, e_mail, full_name from users where user_name='$_SESSION[login_user]'"; 
 	$result = mysql_query($sql,$conn);
-	$val = mysql_fetch_row($result)
+	$val = mysql_fetch_row($result);
 }
 echo 'Password: <input type="text" name="updatePass"';
 if($regErr)

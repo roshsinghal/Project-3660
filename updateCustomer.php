@@ -34,6 +34,15 @@ Update Personal Information|Book Rental Service
 <form action="updateCustomer2.php">
 <br>
 <?php
+if(!$regErr)
+{
+	$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
+	mysql_select_db($username,$conn); 
+
+	$sql = "select password, address, phone_number, e_mail, full_name from users where user_name='$_SESSION[login_user]'"; 
+	$result = mysql_query($sql,$conn);
+	$val = mysql_fetch_row($result)
+}
 echo 'Password: <input type="text" name="updatePass"';
 if($regErr)
 {
@@ -41,6 +50,10 @@ if($regErr)
 		echo '><font color=red>* Cannot be empty!</font';
 	else
 		echo " value=\"$regErr[updatePass]\"";
+}
+else
+{
+	echo " value=\"$val[0]\"";
 }
 echo '><br>';
 echo 'Full Name: <input type="text" name="updateName"';
@@ -51,6 +64,10 @@ if($regErr)
 	else
 		echo " value=\"$regErr[updateName]\"";
 }
+else
+{
+	echo " value=\"$val[4]\"";
+}
 echo '><br>';
 echo 'Email: <input type="text" name="updateEmail"';
 if($regErr)
@@ -59,6 +76,10 @@ if($regErr)
 		echo '><font color=red>* Cannot be empty!</font';
 	else
 		echo " value=\"$regErr[updateEmail]\"";
+}
+else
+{
+	echo " value=\"$val[3]\"";
 }
 echo '><br>';
 echo 'Address: <input type="text" name="updateAdd"';
@@ -69,6 +90,10 @@ if($regErr)
 	else
 		echo " value=\"$regErr[updateAdd]\"";
 }
+else
+{
+	echo " value=\"$val[1]\"";
+}
 echo '><br>';
 echo 'Phone Number: <input type="text" name="updatePhoner"';
 if($regErr)
@@ -77,6 +102,10 @@ if($regErr)
 		echo '><font color=red>* Cannot be empty!</font';
 	else
 		echo " value=\"$regErr[updatePhone]\"";
+}
+else
+{
+	echo " value=\"$val[2]\"";
 }
 echo '><br>';
 ?>

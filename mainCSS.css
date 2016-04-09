@@ -8,9 +8,10 @@ body {
 }
 
 #container{
-	width: ;
+	width: auto;
+	height: 1000px;
 	margin:auto;
-	background-color:#F32835  ;
+	background-color: white;
 	border:1px solid #000000;
 	overflow:hidden;
 }

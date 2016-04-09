@@ -13,8 +13,10 @@ session_start(); // Starting Session
 Book Rental Service
 </title>
 <body>
+
 <?php 
 	require 'navigation.php';
+
 	$_REQUEST['search'] = mysql_escape_string($_REQUEST['search']);
 
 	if(!isset($_REQUEST["search"]))
@@ -74,7 +76,8 @@ Book Rental Service
 	}
 	
 	mysql_close($conn);
+	
 ?>
-
+</div>
 </body>
 </html>

@@ -1,4 +1,5 @@
-<div class="container">
+<div id="container">
+
 
 	<header class="banner">
 		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" height="120" width="160"></a>
@@ -68,8 +69,8 @@
 		</ul>
 	
 	</nav>
-</div>
-	
+
+
 	
 
 	<div id="modal" class="popupContainer" style="display:none;">
@@ -141,3 +142,4 @@
 
 	})
 </script>
+

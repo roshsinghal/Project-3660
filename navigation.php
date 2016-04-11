@@ -7,7 +7,7 @@
 		<div class="searchBox">
 		<form action="index.php" method="get">
 		<input type="text" name="search" class="textBar" size=75 align=right/>
-		<input id='searchB' class='searchB' align=right type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input>
+		<input id='searchB' class='searchB' align=right type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='33' width='35'></input>
 		</form>
 		</div>
 		

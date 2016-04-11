@@ -57,6 +57,8 @@
 				{
 					echo '<p><a class="active" href="manageBook.php">Manage Books</a></p>';
 					echo '<p><a class="active" href="deleteBook.php">Manage Copies</a></p>';
+					echo '<p><a class="active" href="pendingReturns.php">Manage Returns</a></p>';
+					echo '<p><a class="active" href="fullOrderHistory.php">Full Order History</a></p>';
 					echo '<p><a class="active" href="addAdmin.php">Add Admin</a></p>';
 				}
 			?>
@@ -65,7 +67,7 @@
 		</li>
 		</div>
 		
-		<li><a href="#help.php">FAQ</a></li>
+		<li><a href="help.php">FAQ</a></li>
 		<li><a class="active" href="index.php">Home</a></li>
 		
 		</ul>

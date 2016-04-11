@@ -60,7 +60,7 @@ div.bookcontainer{
 div.infoContainer{
 	margin: auto;
 	width: 80%;
-	position: absolute;
+	position: relative;
 	text-align:center;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 18;

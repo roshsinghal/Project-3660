@@ -51,11 +51,11 @@ Book Rental Service
 	ba.date_returned,
 	ba.returned,
 	ba.user_id,
-	ba.return_id.
+	ba.return_id,
 	ba.delivered,
 	ba.order_id
 	from book_details bd 
-	inner join orders ba on bd.book_id=ba.book_id where 1=1 order by order_id desc"; 
+	inner join orders ba on bd.book_id=ba.book_id order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{

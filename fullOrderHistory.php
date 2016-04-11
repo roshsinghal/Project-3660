@@ -55,8 +55,7 @@ Book Rental Service
 	ba.delivered,
 	ba.order_id
 	from book_details bd 
-	inner join orders ba on bd.book_id=ba.book_id
-	where ba.user_id='$_SESSION[login_user]' order by order_id desc"; 
+	inner join orders ba on bd.book_id=ba.book_id order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
@@ -95,7 +94,7 @@ Book Rental Service
 	} 
 	else
 	{
-		echo '<p>There is no order history for this user.</p>'; 
+		echo '<p>There is no order history.</p>'; 
 	}
 	
 	mysql_close($conn);

@@ -84,7 +84,7 @@ Book Rental Service
 	} 
 	else
 	{
-		echo '<p>There is no pending returns.</p>'; 
+		echo '<p>There are no pending returns.</p>'; 
 	}
 	
 	mysql_close($conn);

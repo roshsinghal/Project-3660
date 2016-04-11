@@ -29,6 +29,7 @@ Update Personal Information|Book Rental Service
  	require 'navigation.php';
 ?>
 
+
 <h1 align="center">Update Personal Information</h1>
 
 <form action="updateCustomer2.php">
@@ -46,6 +47,7 @@ if(!$regErr)
 	$result = mysql_query($sql,$conn);
 	$val = mysql_fetch_row($result);
 }
+echo '<div class="infoContainer">';
 echo 'Password: <input type="password" name="updatePass"';
 if($regErr)
 {
@@ -113,7 +115,7 @@ else
 echo '><br>';
 ?>
 <input type="submit" value="Submit">
-
+</div>
 </form>
 </div>
 </body>

@@ -55,14 +55,18 @@ Book Rental Service
 				{
 					echo "<img class=\"imgList\" src=\"images/nocover.jpg\" alt=\"$val[0]\" align=\"left\">";
 				}
-			echo "<form action=\"bookDetails.php\" method=\"get\">";
+			echo '<div class="detailContainer">';
+			echo "<form action=\"bookDetails.php\" method=\"	get\">";
 			echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[5]\">";
 			echo "<a href=\"#\" onclick=\"this.parentNode.submit(); return false;\"><h2>$val[0]</h2></a>";
 			echo "</form>";
+			echo '<div class="innerDetailContainer">';
 			echo "Author: $val[1]<br>";		
 			echo "Publisher: $val[2]<br>";
 			echo "ISBN: $val[3]<br>";
 			echo "Copies Available: $val[4]<br>";
+			echo '</div>';
+			echo '</div>';
 			echo '</div>';
 		 }
 	} 

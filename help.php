@@ -19,7 +19,7 @@ Book Rental Service
 
 	<div class="infoContainer">
 
-	<h1>FAQ</h1>
+<font style="background-image: url(http://i361.photobucket.com/albums/oo54/crackysparkles/sparkles/sparkles.gif); font-size: 60px;">FAQ</font>	
 
 	<div class="faqContainer">
 

@@ -69,10 +69,13 @@ Manage Book|Book Service Rental
 		echo "<td><input type=\"text\" name=\"author\" value=\"\"></td>";
 		echo "<td><input type=\"text\" name=\"publisher\" value=\"\"></td>";
 		echo "<td><input type=\"text\" name=\"isbn\" value=\"\"></td>";
-		echo "<td><input type=\"text\" name=\"available\" value=\"0\" readonly></td>";
-		echo "<td><input type=\"text\" name=\"totalcopies\" value=\"0\" readonly></td>";
+		echo "<input type=\"hidden\" name=\"available\" value=\"0\" readonly></td>";
+		echo "<td>0</td>";
+		echo "<input type=\"hidden\" name=\"totalcopies\" value=\"0\" readonly>";
+		echo "<td>0</td>";
 		echo "<td><input type=\"text\" name=\"bookID\" value=\"\"></td>";
-		echo "<td><input type=\"text\" name=\"archived\" value=\"0\" readonly></td>";
+		echo "<input type=\"hidden\" name=\"archived\" value=\"0\" readonly>";
+		echo "<td>No</td>";
 		echo "<td><input type=\"submit\" value=\"Insert\"></td>";
 		echo "</form>";
 		echo "<td></td>";
@@ -101,13 +104,31 @@ Manage Book|Book Service Rental
 		echo "<td><input type=\"text\" name=\"author\" value=\"$val[7]\"></td>";
 		echo "<td><input type=\"text\" name=\"publisher\" value=\"$val[5]\"></td>";
 		echo "<td><input type=\"text\" name=\"isbn\" value=\"$val[4]\"></td>";
-		echo "<td><input type=\"text\" name=\"available\" value=\"$val[1]\" readonly></td>";
-		echo "<td><input type=\"text\" name=\"totalcopies\" value=\"$val[6]\" readonly></td>";
-		echo "<td><input type=\"text\" name=\"bookID\" value=\"$val[0]\" readonly></td>";
-		echo "<td><input type=\"text\" name=\"archived\" value=\"$val[2]\" readonly></td>";
+		echo "<td>$val[1]</td>";
+		echo "<td>$val[6]</td>";
+		echo "<td>$val[0]</td><input type=\"hidden\" name=\"bookID\" value=\"$val[0]\" readonly>";
+		if($val[2])
+			echo "<td>Yes</td>";
+		else
+			echo "<td>No</td>";
 		echo "<td><input type=\"submit\" value=\"Update\"></td>";
 		echo "</form>";
-		echo "<td></td>";
+		if($val[2])
+		{
+			echo "<form action=\"archiveBook.php\" method=\"post\">";
+			echo "<input type=\"hidden\" name=\"bookID\" value=\"$val[0]\" readonly>";
+			echo "<input type=\"hidden\" name=\"archive\" value=\"1\" readonly>";
+			echo "<td><input type=\"submit\" value=\"Archive\"></td>";
+			echo "</form>";
+		}
+		else
+		{
+			echo "<form action=\"archiveBook.php\" method=\"post\">";
+			echo "<input type=\"hidden\" name=\"bookID\" value=\"$val[0]\" readonly>";
+			echo "<input type=\"hidden\" name=\"archive\" value=\"0\" readonly>";
+			echo "<td><input type=\"submit\" value=\"Restore\"></td>";
+			echo "</form>";
+		}
 		echo '</tr>';
 	 }
 	echo '</table>';

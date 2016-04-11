@@ -67,7 +67,7 @@ Manage Copy|Book Service Rental
     	echo "<td>$val[2]</td>";		
     	echo "<td>$val[3]</td>";
 		echo "<form action=\"insertCopy.php\" method=\"post\">";
-		echo "<td><input type=\"text\" name=\"bookID\" value=\"$_POST[bookID]\" readonly></td>";
+		echo "<td>$_POST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_POST[bookID]\" readonly>";
 		echo "<td><input type=\"text\" name=\"copyID\"></td>";
 		echo "<td><input type=\"submit\" value=\"Insert\"></td>";
 		echo "</form>";
@@ -96,8 +96,8 @@ Manage Copy|Book Service Rental
     	echo "<td>$val[4]</td>";		
     	echo "<td>$val[3]</td>";
 		echo "<form action=\"deleteCopy2.php\" method=\"post\">";
-		echo "<td><input type=\"text\" name=\"bookID\" value=\"$_POST[bookID]\" readonly></td>";
-		echo "<td><input type=\"text\" name=\"copyID\" value=\"$val[5]\" readonly></td>";
+		echo "<td>$_POST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_POST[bookID]\" readonly>";
+		echo "<td>$val[5]</td><input type=\"hidden\" name=\"copyID\" value=\"$val[5]\" readonly>";
 		echo "<td><input type=\"text\" name=\"reason\" value=\"\"></td>";
 		echo "<td><input type=\"submit\" value=\"Delete\"></td>";
 		echo "</form>";

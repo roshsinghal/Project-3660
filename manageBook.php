@@ -113,7 +113,7 @@ Manage Book|Book Service Rental
 			echo "<td>No</td>";
 		echo "<td><input type=\"submit\" value=\"Update\"></td>";
 		echo "</form>";
-		if($val[2])
+		if(!$val[2])
 		{
 			echo "<form action=\"archiveBook.php\" method=\"post\">";
 			echo "<input type=\"hidden\" name=\"bookID\" value=\"$val[0]\" readonly>";

@@ -37,10 +37,12 @@ div.searchBox{
     margin-left: -105px;
 	margin-top: 60px;
 	border:1px solid green;
+	
 }
 
 input.textBar{
 	height:30px;
+	width: 92%;
 }
 
 input.searchB{

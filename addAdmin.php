@@ -92,7 +92,7 @@ if($regErr)
 }
 
 echo '</div>';
-echo '><br>';
+echo '<br>';
 ?>
 <input type="submit" value="Submit" buttonMargin>
 </form>

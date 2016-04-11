@@ -28,12 +28,15 @@ Register|Book Rental Service
 <?php
  require 'navigation.php';
 ?>
+<div class="infoContainer">
 
 <h1 align="center">Register</h1>
 
 <form action="addCustomer.php" method="post">
 <br>
 <?php
+echo '<div class="infoDialog">';
+
 echo 'Username: <input type="text" name="userName"';
 if($regErr)
 {
@@ -87,10 +90,13 @@ if($regErr)
 	else
 		echo " value=\"$regErr[phoneNumber]\"";
 }
-echo '><br>';
+
+echo '</div>';
+echo '<br>';
 ?>
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" class="buttonMargin">
 </form>
+</div>
 </div>
 </body>
 </html>

@@ -47,6 +47,9 @@ if(!$regErr)
 	$result = mysql_query($sql,$conn);
 	$val = mysql_fetch_row($result);
 }
+
+echo '<div class="infoDialog">';
+
 echo 'Password: <input type="password" name="updatePass"';
 if($regErr)
 {
@@ -111,9 +114,10 @@ else
 {
 	echo " value=\"$val[2]\"";
 }
-echo '><br>';
+echo '</div>';
+echo '<br>';
 ?>
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" class="padding">
 </form>
 </div>
 </div>

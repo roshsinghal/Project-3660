@@ -1,8 +1,8 @@
 <div id="container">
 
 
-	<header class="banner">
-		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" class="logo" height="120" width="160" align="left"></a>
+	<header>
+		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo"></a>
 		
 		<div class="searchBox">
 		<form action="index.php" method="get">

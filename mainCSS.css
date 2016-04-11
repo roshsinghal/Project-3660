@@ -18,12 +18,16 @@ header {
 	background-color:white;
 	text-align:left;
 	width:1020px;
-	border: 3px solid black;
+	
 }
 
-banner.logo{
-	border: 10;
+.header_logo{
+	height:120;
+	width:160;
+	align:left;
+border: 3px solid black;
 }
+
 div.searchBox{
 	height:120px;
 	margin: auto;

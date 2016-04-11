@@ -25,15 +25,17 @@ header {
 	height:120;
 	width:160;
 	align:left;
-	border: 3px solid black;
 	float:left;
 }
 
 div.searchBox{
 	height:120px;
 	margin: auto;
-	width: 650px;
-	border: 10px solid #73AD21;
+	width: 600px;
+	position: absolute;
+    left: 50%;
+    margin-left: -105px;
+	margin-top: 60px;
 	
 }
 

@@ -93,7 +93,7 @@ Book Rental Service
 	} 
 	else
 	{
-		echo '<p>There is no current orders for this user.</p>'; 
+		echo '<p>There are no current orders for this user.</p>'; 
 	}
 	
 	mysql_close($conn);

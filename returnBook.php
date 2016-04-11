@@ -24,7 +24,7 @@ try {
 
 	
 	echo "<h3>Book returned.</h3>";
-	header('location: pendingReturns.php');
+	header( "refresh:3;url=pendingReturns.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

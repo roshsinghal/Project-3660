@@ -28,6 +28,7 @@ try {
 	echo "<h3>Book ";
 	echo ($_POST["bookID"]);
 	echo " inserted!</h3>";
+	header( "refresh:3;url=manageBook.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

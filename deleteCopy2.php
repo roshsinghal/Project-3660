@@ -21,6 +21,7 @@ try {
 	echo "<h3>Copy ";
 	echo ($_POST["copyID"]);
 	echo " deleted!</h3>";
+	header( "refresh:3;url=deleteBook.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

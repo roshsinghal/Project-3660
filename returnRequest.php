@@ -18,8 +18,8 @@ try {
 	$conn->commit();
 
 	
-	echo "<h3>Book returned.</h3>";
-	header('location: showOrders.php');
+	echo "<h3>Book return requested.</h3>";
+	header( "refresh:3;url=showOrders.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

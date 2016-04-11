@@ -92,8 +92,8 @@ try {
 	
 	echo "<h3>User ";
 	echo ($_POST["userName"]);
-	echo " registered!</h3>";
-	header('location: index.php');
+	echo " updated!</h3>";
+	header( "refresh:3;url=updateCustomer.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

@@ -24,7 +24,7 @@ try {
 
 	
 	echo "<h3>Order placed.</h3>";
-	header('location: showOrders.php');
+	header( "refresh:3;url=showOrders.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

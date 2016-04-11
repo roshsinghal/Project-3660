@@ -98,7 +98,7 @@ try {
 	echo "<h3>Admin ";
 	echo ($_POST["userName"]);
 	echo " added!</h3>";
-	header('location: index.php');
+	header( "refresh:3;url=index.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

@@ -23,6 +23,7 @@ try {
 	echo "<h3>Book ";
 	echo ($$_POST["bookID"]);
 	echo " updated!</h3>";
+	header( "refresh:3;url=manageBook.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();

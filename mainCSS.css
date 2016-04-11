@@ -94,7 +94,7 @@ div.innerDetailContainer{
 	font-size: 15;
 	line-height: 2em;
 }
-input.padding{
+input.buttonMargin{
 	margin-top:8px;
 }
 img.imgList{
@@ -104,6 +104,19 @@ img.imgList{
 	border-radius: 8px;
 	height: 300px;
 	width: 225px;
+}
+
+table{
+		line-height: 2.5em;
+
+}
+
+.trColr1{
+	background-color:rgba(255,0,0,0.1);
+}
+
+.trColr2{
+	background-color:rgba(255,1,255,0.1);
 }
 
 nav {

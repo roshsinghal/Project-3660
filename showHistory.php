@@ -65,9 +65,13 @@ Book Rental Service
 	 echo '<th>Date Rented</th>';
 	 echo '<th>Date Returned</th>';
   	 echo '</tr>';
+	 $alt = true;
 	 while($val = mysql_fetch_row($result))
 	 {
-		echo '<tr align="center">';
+		 if($alt)
+			echo '<tr align="center" class="trColr1">';
+		else
+			echo '<tr align="center" class="trColr2">';
 		echo "<td>";
     	echo "$val[0]";
 		echo "</td>";
@@ -84,6 +88,7 @@ Book Rental Service
 			echo "<td>Not Returned</td>";
 		}
 		echo '</tr>';
+		$alt = !$alt;
 	 }
 	} 
 	else

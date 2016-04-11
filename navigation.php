@@ -1,7 +1,7 @@
 <div id="container">
 
 
-	<header>
+	<header class="banner">
 		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo"></a>
 		
 		<div class="searchBox">

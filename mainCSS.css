@@ -14,7 +14,7 @@ body {
 	overflow:hidden;
 }
 
-header {
+.banner {
 	background-color:white;
 	text-align:left;
 	width:1020px;
@@ -35,9 +35,7 @@ div.searchBox{
 	position: absolute;
     left: 50%;
     margin-left: -105px;
-	margin-top: 60px;
-	border:1px solid green;
-	
+	margin-top: 60px;	
 }
 
 input.textBar{
@@ -172,9 +170,9 @@ a.btn_red {color: #FFF;}
 .one_half.last {width:45%; margin-left:5%;}
 
 
-.popupHeader {font-size:16px; text-transform: uppercase;}
+.popupHeader {font-size:15px; text-transform: uppercase;}
 .popupHeader {background:#F4F4F2; position:relative; padding:10px 20px; border-bottom:1px solid #DDD; font-weight:bold;}
-.popupHeader .modal_close {position: absolute; right: 0; top:0; padding:10px 15px; background:#E4E4E2; cursor: pointer; color:#aaa; font-size:16px;}
+.popupHeader .modal_close {position: absolute; right: 0; top:0; padding:10px 15px; background:red; cursor: pointer; color:#aaa; font-size:16px;}
 
 .popupBody {padding:20px;}
 

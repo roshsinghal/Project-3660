@@ -28,19 +28,7 @@
 
 		?>
 		
-		<?php 
 		
-		if(!empty($_SESSION['login_user']))
-		{
-			echo "<li>Hello, $_SESSION[login_user]";
-			if($_SESSION['is_admin'])
-				echo ", ADMIN";
-			echo "</li>";
-		}
-		else
-			echo "<li>Hello, Guest</li>";
-		
-		?>
 	
 		<div class="dropdown">
 		<li><a href="#" >Manage</a>
@@ -71,6 +59,20 @@
 		<li><a class="active" href="index.php">Home</a></li>
 		
 		</ul>
+		
+		<?php 
+		
+		if(!empty($_SESSION['login_user']))
+		{
+			echo "<ul class=\"userL\"><li>Hello, $_SESSION[login_user]";
+			if($_SESSION['is_admin'])
+				echo ", ADMIN";
+			echo "</li></ul>";
+		}
+		else
+			echo "<ul class=\"userL\"><li>Hello, Guest</li></ul>";
+		
+		?>
 	
 	</nav>
 

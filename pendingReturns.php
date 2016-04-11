@@ -1,7 +1,7 @@
 <?php
 	session_start(); // Starting Session
 	
-if(empty($_SESSION['login_user']))
+if(!$_SESSION['is_admin'])
 {
 	header('location: index.php');
 	die();
@@ -49,18 +49,17 @@ Book Rental Service
 	ba.date_rented,
 	ba.order_id,
 	bd.author,
-	ba.delivered
+	ba.user_id
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id
-	where ba.user_id='$_SESSION[login_user]' and ba.returned=0 order by order_id desc"; 
+	where ba.delivered=1 and ba.returned=0 order by order_id"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
-     echo '<th>Title</th>';
-	 echo '<th>Author(s)</th>';
-     echo '<th>Publisher</th>';		
+	 echo '<th>Username</th>';
+     echo '<th>Title</th>';		
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';
 	 echo '<th>Return</th>';
@@ -68,24 +67,16 @@ Book Rental Service
 	 while($val = mysql_fetch_row($result))
 	 {
 		echo '<tr align="center">';
+		echo "<td>$val[6]</td>";
 		echo "<td>";
     	echo "$val[0]";
-		echo "</td>";
-		echo "<td>$val[5]</td>";
-    	echo "<td>$val[1]</td>";			
+		echo "</td>";			
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
 		echo "<td>";
-		if($val[6])
-		{	
-			echo "<td>Approval Pending</td>";
-		}
-		else
-		{
-			echo "<form action=\"returnRequest.php\" method=\"post\">";
-			echo "<input type=\"hidden\" name=\"orderID\" value=\"$val[4]\">";
-			echo "<input class=\"returnButton\" type=\"submit\" value=\"Return\">";
-		}
+		echo "<form action=\"returnBook.php\" method=\"post\">";
+		echo "<input type=\"hidden\" name=\"orderID\" value=\"$val[4]\">";
+		echo "<input class=\"returnButton\" type=\"submit\" value=\"Accept Return\">";
 		echo "</form>";
 		echo "</td>";
 		echo '</tr>';
@@ -93,7 +84,7 @@ Book Rental Service
 	} 
 	else
 	{
-		echo '<p>There is no current orders for this user.</p>'; 
+		echo '<p>There is no pending returns.</p>'; 
 	}
 	
 	mysql_close($conn);

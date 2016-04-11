@@ -2,12 +2,12 @@
 
 
 	<header class="banner">
-		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" height="120" width="160" align="left"></a>
+		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" class="logo" height="120" width="160" align="left"></a>
 		
 		<div class="searchBox">
 		<form action="index.php" method="get">
-		<input type="text" name="search" class="textBar" size=75/>
-		<input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input>
+		<input type="text" name="search" class="textBar" size=75 align=right/>
+		<input id='searchB' class='searchB' align=right type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input>
 		</form>
 		</div>
 		

@@ -5,39 +5,7 @@ body {
         font-size: 14px;
         background-color: #f5f5f5;
 		margin-top: 0px;
-}
-
-div.searchBox{
-	height:120px;
-	margin: auto;
-	width: auto;	
-}
-
-input.textBar{
-	height:30px;
-}
-
-input.searchB{
-	padding-left: 5px;
-}
-
-img.imgList{
-	padding-top: 30px;
-	padding-left:35px;
-	padding-right: 35px;
-	border-radius: 8px;
-	height: 350px;
-	width: 275px;
 } 
-
-div.bookcontainer{
-	width: 960px;
-	margin:auto;
-	background-color: white;
-	border:1px solid #000000;
-	padding-bottom: 25px;
-	overflow:hidden;
-}
 
 #container{
 	width: 1020px;
@@ -50,6 +18,42 @@ header {
 	background-color:white;
 	text-align:left;
 	width:1020px;
+	border: 3px solid black;
+}
+
+banner.logo{
+	border: 10;
+}
+div.searchBox{
+	height:120px;
+	margin: auto;
+	width: 650px;
+	border: 10px solid #73AD21;	
+}
+
+input.textBar{
+	height:30px;
+}
+
+input.searchB{
+	padding-left: 5px;
+}
+
+div.bookcontainer{
+	width: 960px;
+	margin:auto;
+	background-color: white;
+	border:1px solid #000000;
+	padding-bottom: 25px;
+	overflow:hidden;
+}
+img.imgList{
+	padding-top: 30px;
+	padding-left:35px;
+	padding-right: 35px;
+	border-radius: 8px;
+	height: 350px;
+	width: 275px;
 }
 
 nav {
@@ -79,6 +83,7 @@ ul {
 */
 li {
     float: left;
+	background-image: none;
 }
 
 li a {
@@ -91,13 +96,6 @@ li a {
 
 li a:hover {
     background-color: #D3D7DA   ;
-}
-
-.searchB{
-
-	{
-    padding-left: 2cm;
-} 
 }
 
 .dropdown {

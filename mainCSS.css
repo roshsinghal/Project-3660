@@ -75,6 +75,17 @@ div.infoDialog{
 	line-height: 2em;
 	font-family: "Arial", Helvetica, sans-serif;
 }
+div.faqContainer{
+	margin: auto;
+	width: 80%;
+	position: relative;
+	text-align:left;
+	font-size: 18;
+	font-family: "Arial", Helvetica, sans-serif;
+}
+p{
+	line-height: 2em;
+}
 div.detailContainer{
 	margin: auto;
 	width: 580px;
@@ -94,6 +105,7 @@ div.innerDetailContainer{
 	font-size: 15;
 	line-height: 2em;
 }
+
 input.buttonMargin{
 	margin-top:8px;
 }

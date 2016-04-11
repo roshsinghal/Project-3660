@@ -16,17 +16,27 @@ Book Rental Service
 <?php 
 	require 'navigation.php';
 ?>
-<h1>FAQ</h1>
-<h3>How do I register?</h3>
-<p>Click Login, and then click register, and fill in all the fields with your information.</p>
-<h3>How do I check out a book?</h3>
-<p>Click a book's title on the main page to get to the individual book page. If there are available copies, you can click Order to instantly order the book.</p>
-<h3>How do I see my order history?</h3>
-<p>Hover over the Manage button and click Order History.</p>
-<h3>How do I become admin?</h3>
-<p>You don't.</p>
-<h3>How do I get to the help page?</h3>
-<p>...</p>
+
+	<div class="infoContainer">
+
+	<h1>FAQ</h1>
+
+	<div class="faqContainer">
+
+		<h3>Q: How do I register?</h3>
+		<p>A: Click Login, and then click register, and fill in all the fields with your information.</p>
+		<h3>Q: How do I check out a book?</h3>
+		<p>A: Click a book's title on the main page to get to the individual book page. If there are available copies, you can click Order to instantly order the book.</p>
+		<h3>Q: How do I see my order history?</h3>
+		<p>A: Hover over the Manage button and click Order History.</p>
+		<h3>Q: How do I become admin?</h3>
+		<p>A: You don't.</p>
+		<h3>Q: How do I get to the help page?</h3>
+		<p>A: ... smh</p>
+	
+	</div>
+	</div>
+	
 </div>
 </body>
 </html>

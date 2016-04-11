@@ -2,7 +2,15 @@
 
 
 	<header class="banner">
-		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" height="120" width="160"></a>
+		<a href="index.php" target="_self"><img class="header_logo" src="images/booklogo.jpg" alt="banner_logo" height="120" width="160" align="left"></a>
+		
+		<div class="searchBox">
+		<form action="index.php" method="get">
+		<input type="text" name="search" class="textBar" size=75/>
+		<input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input>
+		</form>
+		</div>
+		
 	</header>
 
 	<nav>
@@ -33,11 +41,6 @@
 			echo "<li>Hello, Guest</li>";
 		
 		?>
-
-		<form action="index.php" method="get">
-		<li><input type="text" name="search" value="" size=100/></li>
-		<li><input id='searchB' class='searchB' type="image" src='http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-th.png' alt='Search Button Without Text clip art' height='40' width='40'></input></li><br>
-		</form>
 	
 		<div class="dropdown">
 		<li><a href="#" >Manage</a>
@@ -63,7 +66,6 @@
 		</div>
 		
 		<li><a href="#help.php">FAQ</a></li>
-		
 		<li><a class="active" href="index.php">Home</a></li>
 		
 		</ul>

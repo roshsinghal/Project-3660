@@ -7,6 +7,29 @@ body {
 		margin-top: 0px;
 }
 
+div.searchBox{
+	height:120px;
+	margin: auto;
+	width: auto;	
+}
+
+input.textBar{
+	height:30px;
+}
+
+input.searchB{
+	padding-left: 5px;
+}
+
+img.imgList{
+	padding-top: 30px;
+	padding-left:35px;
+	padding-right: 35px;
+	border-radius: 8px;
+	height: 350px;
+	width: 275px;
+} 
+
 div.bookcontainer{
 	width: 960px;
 	margin:auto;
@@ -26,8 +49,7 @@ div.bookcontainer{
 header {
 	background-color:white;
 	text-align:left;
-	width: ;
-	height: ;
+	width:1020px;
 }
 
 nav {

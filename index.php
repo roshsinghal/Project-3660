@@ -47,6 +47,14 @@ Book Rental Service
 		 {;
 			echo '<br>';	
 			echo '<div class="bookcontainer">';
+				if(file_exists("images/$val[5].jpg"))
+				{
+					echo "<img class=\"imgList\" src=\"images/$val[5].jpg\" alt=\"$val[0]\" align=\"left\">";
+				}
+				else
+				{
+					echo "<img class=\"imgList\" src=\"images/nocover.jpg\" alt=\"$val[0]\" align=\"left\">";
+				}
 			echo "<form action=\"bookDetails.php\" method=\"get\">";
 			echo "<input type=\"hidden\" name=\"selectID\" value=\"$val[5]\">";
 			echo "<a href=\"#\" onclick=\"this.parentNode.submit(); return false;\"><h2>$val[0]</h2></a>";

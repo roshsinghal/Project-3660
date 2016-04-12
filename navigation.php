@@ -26,15 +26,14 @@
 		else
 			echo '<li><a id="modal_trigger" href="#modal" class="btn_log">Login</a></li>';
 
-		?>
 		
-		
-	
-		<div class="dropdown">
-		<li><a href="#" >Manage</a>
-			<div class="dropdown-content">
-			<ul>
-			<?php
+		if(!empty($_SESSION['login_user']))
+		{
+			echo "<div class=\"dropdown\">";
+			echo "<li><a href=\"#\" >Manage</a>";
+			echo "<div class=\"dropdown-content\">";
+			echo "<ul>"
+			
 				if(!$_SESSION['is_admin'])
 				{	
 					echo '<p><a class="active" href="updateCustomer.php">Update Info</a></p>';
@@ -49,11 +48,13 @@
 					echo '<p><a class="active" href="fullOrderHistory.php">Full Order History</a></p>';
 					echo '<p><a class="active" href="addAdmin.php">Add Admin</a></p>';
 				}
-			?>
-			</ul>
-			</div>
-		</li>
-		</div>
+			
+			echo "</ul>";
+			echo "</div>";
+			echo "</li>";
+			echo "</div>";
+		}
+		?>
 		
 		<li><a href="help.php">FAQ</a></li>
 		<li><a class="active" href="index.php">Home</a></li>

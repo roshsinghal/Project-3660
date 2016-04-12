@@ -16,7 +16,7 @@ if(empty($_SESSION['login_user']))
 </head>
 
 <title>
-Book Rental Service
+Book List|Book Rental Service
 </title>
 <body>
 <?php 

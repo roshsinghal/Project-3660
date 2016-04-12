@@ -7,7 +7,7 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (empty($_POST['username']) || empty($_POST['password'])) {
-	$error = "Username $_POST[username] or Password $_POST[password] is invalid";
+	$error = "Username or Password is invalid";
 }
 else
 {
@@ -43,11 +43,15 @@ else
 		}
 			//header("location: index.php"); // Redirecting To Other Page
 	} else {
-		$error = "Username $username or Password $password is invalid";
+		$error = "Username or Password is invalid";
 	}
 	mysql_close($connection); // Closing Connection
 }
 //echo $error;
-if($error != '') header('location: index.php?error=' . $error);
+if($error != '') 
+{ 
+	echo $error;
+	header("refresh:3;url=$_POST[lastPage]")
+}
 else header("location: $_POST[lastPage]");
 ?>

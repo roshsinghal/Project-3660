@@ -90,9 +90,7 @@ try {
 	$conn->exec("update users set password='$password', address='$address', phone_number='$phoneNumber', e_mail='$email', full_name='$fullName' where user_name='$userName'");
 	$conn->commit();
 	
-	echo "<h3>User ";
-	echo ($_POST["userName"]);
-	echo " updated!</h3>";
+	echo "<h3>Details updated successfully.</h3>";
 	header( "refresh:3;url=updateCustomer.php" );
 
 } catch (Exception $e) {

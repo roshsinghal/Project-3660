@@ -32,7 +32,7 @@ Update Personal Information|Book Rental Service
 
 <h1 align="center">Update Personal Information</h1>
 
-<form action="updateCustomer2.php">
+<form action="updateCustomer2.php" method="post">
 <br>
 <?php
 if(!$regErr)
@@ -102,7 +102,7 @@ else
 	echo " value=\"$val[1]\"";
 }
 echo '><br>';
-echo 'Phone Number: <input type="text" name="updatePhoner"';
+echo 'Phone Number: <input type="text" name="updatePhone"';
 if($regErr)
 {
 	if(!$regErr['updatePhone'])
@@ -114,7 +114,7 @@ else
 {
 	echo " value=\"$val[2]\"";
 }
-echo '</div>';
+echo '></div>';
 echo '<br>';
 ?>
 <input type="submit" value="Submit" class="padding">

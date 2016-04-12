@@ -55,7 +55,8 @@ Book Rental Service
 	ba.delivered,
 	ba.order_id
 	from book_details bd 
-	inner join orders ba on bd.book_id=ba.book_id order by order_id desc"; 
+	inner join orders ba on bd.book_id=ba.book_id 
+	order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
@@ -67,7 +68,7 @@ Book Rental Service
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';
 	 echo '<th>Date Returned</th>';
-	 echo '<th>Returned By</th>';
+	 echo '<th>Confirmed By</th>';
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {
@@ -86,7 +87,7 @@ Book Rental Service
 		}
 		else
 		{
-			echo "<td>Not Returned</td>";
+			echo "<td>-</td>";
 			echo "<td>-</td>";
 		}
 		echo '</tr>';

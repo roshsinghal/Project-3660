@@ -78,7 +78,7 @@ Book Rental Service
 		echo "<td>";
 		if($val[6])
 		{	
-			echo "Approval Pending<";
+			echo "Confirmation Pending";
 		}
 		else
 		{

@@ -71,10 +71,6 @@ session_start(); // Starting Session
 		header('location: register.php');
 		die();
 	}
-	else
-	{
-		unset($_SESSION['regErr']);
-	}
 
 try{
 	$conn = new PDO('mysql:host=17carson.cs.uleth.ca;dbname=group7',$username,$password);
@@ -98,10 +94,19 @@ try {
 	echo "<h3>Admin ";
 	echo ($_POST["userName"]);
 	echo " added!</h3>";
+	unset($_SESSION['regErr']);
 	header( "refresh:3;url=index.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();
-  echo "Failed: " . $e->getMessage();
+  if($e->getCode() == 23000)
+	{
+		echo "Please provide a different username.";
+		header( "refresh:3;url=addAdmin.php" );
+	}
+	else
+	{
+		echo "Failed: " . $e->getMessage();
+	}
 }
 ?>

@@ -114,7 +114,7 @@ else
 {
 	echo " value=\"$val[2]\"";
 }
-echo '</div>';
+echo '></div>';
 echo '<br>';
 ?>
 <input type="submit" value="Submit" class="padding">

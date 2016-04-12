@@ -64,7 +64,16 @@
 		
 		if(!empty($_SESSION['login_user']))
 		{
-			echo "<ul class=\"userL\"><li>Hello, $_SESSION[login_user]";
+			$username = 'group7';
+			$password = 'zpakwn';	
+
+			$conn = mysql_connect('17carson.cs.uleth.ca',$username,$password) or die(mysql_error());
+			mysql_select_db($username,$conn);
+			
+			$result = mysql_query("select full_name from users where user_name='$_SESSION[login_user]'",$conn);
+			$val = mysql_fetch_row($result)
+	
+			echo "<ul class=\"userL\"><li>Hello, $val[0]";
 			if($_SESSION['is_admin'])
 				echo ", ADMIN";
 			echo "</li></ul>";

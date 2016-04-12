@@ -53,9 +53,14 @@ Book Rental Service
 	ba.user_id,
 	ba.return_id,
 	ba.delivered,
-	ba.order_id
+	ba.order_id,
+	bf.full_name
 	from book_details bd 
-	inner join orders ba on bd.book_id=ba.book_id order by order_id desc"; 
+	inner join orders ba 
+		inner join users bf
+		on bf.user_name=ba.user_id
+	on bd.book_id=ba.book_id 
+	order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
@@ -82,7 +87,7 @@ Book Rental Service
 		if($val[6])
 		{
 			echo "<td>$val[5]</td>";
-			echo "<td>$val[8]</td>";
+			echo "<td>$val[11]</td>";
 		}
 		else
 		{

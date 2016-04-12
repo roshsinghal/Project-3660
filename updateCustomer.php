@@ -32,7 +32,7 @@ Update Personal Information|Book Rental Service
 
 <h1 align="center">Update Personal Information</h1>
 
-<form action="updateCustomer2.php">
+<form action="updateCustomer2.php" method="post">
 <br>
 <?php
 if(!$regErr)

@@ -1,6 +1,3 @@
-// TAB YOUR SHIT OUT
-
-
 <?php
 //header("Location: index.php"); 
 //    exit;

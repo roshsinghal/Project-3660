@@ -21,7 +21,7 @@ if(!$_SESSION['is_admin'])
 </head>
 
 <title>
-Register|Book Rental Service
+Add Admin|Book Rental Service
 </title>
 <body>
 
@@ -30,7 +30,7 @@ Register|Book Rental Service
 ?>
 <div class="infoContainer">
 
-<h1 align="center">Add Administrator Account</h1>
+<h1 class="widget_heading">Add Administrator Account</h1>
 
 <form action="addAdmin2.php" method="post">
 <br>

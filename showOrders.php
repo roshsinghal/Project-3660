@@ -16,12 +16,15 @@ if(empty($_SESSION['login_user']))
 </head>
 
 <title>
-Book List|Book Rental Service
+Checkout List|Book Rental Service
 </title>
 <body>
+
 <?php 
 	require 'navigation.php';
-
+	
+	echo '<h1 class="headingFormat">Your Checkout Box</h1>';
+	
 	if(!isset($_REQUEST["search"]))
 	{
 	 $booksearch = "1=1";

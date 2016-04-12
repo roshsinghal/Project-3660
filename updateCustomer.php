@@ -30,7 +30,7 @@ Update Personal Information|Book Rental Service
 ?>
 <div class="infoContainer">
 
-<h1 align="center">Update Personal Information</h1>
+<h1 class="widget_heading">Update Personal Information</h1>
 
 <form action="updateCustomer2.php" method="post">
 <br>

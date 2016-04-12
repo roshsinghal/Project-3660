@@ -30,7 +30,7 @@ Manage Copies|Book Service Rental
  	require 'navigation.php';
 ?>
 
-<h1 align="center">Select a Book</h1>
+<h1  class="headingFormat">Manage Copies</h1>
 <?php 
 	if("" == trim($_REQUEST["search"]))
 	{

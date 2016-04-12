@@ -30,7 +30,7 @@ Manage Copy|Book Service Rental
  require 'navigation.php';
 ?>
 
-<h1 align="center">Insert Copies</h1>
+<h1 class="headingFormat">Insert Copies</h1>
 <?php 
 	
 	$username = 'group7';
@@ -78,7 +78,7 @@ Manage Copy|Book Service Rental
 	$result = mysql_query($sql,$conn);
 	if(mysql_num_rows($result) > 0)
 	{
-	 echo '<h1 align="center">Delete Copies</h1>';
+	 echo '<h1 class="headingFormat">Delete Copies</h1>';
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';

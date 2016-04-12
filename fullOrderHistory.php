@@ -16,12 +16,14 @@ if(!$_SESSION['is_admin'])
 </head>
 
 <title>
-Book Rental Service
+Order History|Book Rental Service
 </title>
 <body>
 <?php 
 	require 'navigation.php';
 
+	echo '<h1 class="headingFormat">Complete Order History</h1>';
+	
 	if(!isset($_REQUEST["search"]))
 	{
 	 $booksearch = "1=1";

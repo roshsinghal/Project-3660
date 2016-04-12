@@ -16,12 +16,14 @@ if(empty($_SESSION['login_user']))
 </head>
 
 <title>
-Book Rental Service
+Checkout History|Book Rental Service
 </title>
 <body>
 <?php 
 	require 'navigation.php';
 
+	echo '<h1 class="headingFormat">Your Order History</h1>';
+	
 	if(!isset($_REQUEST["search"]))
 	{
 	 $booksearch = "1=1";

@@ -30,7 +30,7 @@ Register|Book Rental Service
 ?>
 <div class="infoContainer">
 
-<h1 align="center">Register</h1>
+<h1 class="widget_heading">Register</h1>
 
 <form action="addCustomer.php" method="post">
 <br>

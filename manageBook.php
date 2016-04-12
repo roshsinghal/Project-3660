@@ -30,7 +30,7 @@ Manage Book|Book Service Rental
  require 'navigation.php';
 ?>
 
-<h1 align="center">Insert Book</h1>
+<h1 class="headingFormat">Insert Book</h1>
 <?php 
 	if("" == trim($_REQUEST["search"]))
 	{
@@ -85,7 +85,7 @@ Manage Book|Book Service Rental
 	echo '</table>';
 
 		echo '<table style="width:100%">';
-		echo '<h1 align="center">Manage Book</h1>';
+		echo '<h1 class="headingFormat">Manage Book</h1>';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
 	 echo '<th>Author(s)</th>';

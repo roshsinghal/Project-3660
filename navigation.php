@@ -75,7 +75,7 @@
 	
 			echo "<ul class=\"userL\"><li>Hello, $val[0]";
 			if($_SESSION['is_admin'])
-				echo ", ADMIN";
+				echo " (Admin)";
 			echo "</li></ul>";
 		}
 		else

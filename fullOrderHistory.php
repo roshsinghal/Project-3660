@@ -68,7 +68,7 @@ Book Rental Service
      echo '<th>ISBN</th>';
 	 echo '<th>Date Rented</th>';
 	 echo '<th>Date Returned</th>';
-	 echo '<th>Returned By</th>';
+	 echo '<th>Confirmed By</th>';
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {

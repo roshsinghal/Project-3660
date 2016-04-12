@@ -63,6 +63,7 @@ Manage Book|Book Service Rental
 	 echo '<th>Total Copies</th>';
 	 echo '<th>Book ID</th>';
 	 echo '<th>Archived?</th>';
+	 echo '<th></th>';
   	 echo '</tr>';
 	 	 	echo '<tr align="center">';
 		echo "<form action=\"insertBook.php\" method=\"post\">";
@@ -94,6 +95,8 @@ Manage Book|Book Service Rental
 	 echo '<th>Total Copies</th>';
 	 echo '<th>Book ID</th>';
 	 echo '<th>Archived?</th>';
+	 echo '<th></th>';
+	 echo '<th></th>';
   	 echo '</tr>';	
 
 	 while($val = mysql_fetch_row($result))

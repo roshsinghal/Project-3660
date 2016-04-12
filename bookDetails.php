@@ -10,12 +10,13 @@ session_start(); // Starting Session
 </head>
 
 <title>
-Book Rental Service
+Book-Book Rental Service
 </title>
 <body>
 <?php 
 	require 'navigation.php';
-	
+
+
 	$username = 'group7';
 	$password = 'zpakwn';	
 
@@ -27,15 +28,20 @@ Book Rental Service
 	if(mysql_num_rows($result) > 0)
 	{
 		$val = mysql_fetch_row($result);
-		echo "<h1 align=\"center\">$val[0]</h1>";
+			
+		echo '<div class="bookDetailContainer">'; //container to hold the book image and its info
+
 		if(file_exists("images/$_REQUEST[selectID].jpg"))
 		{
-			echo "<img src=\"images/$_REQUEST[selectID].jpg\" alt=\"$val[0]\">";
+			echo "<img class=\"bookImg\" src=\"images/$_REQUEST[selectID].jpg\" alt=\"$val[0]\">";
 		}
 		else
 		{
-			echo "<img src=\"images/nocover.jpg\" alt=\"$val[0]\">";
+			echo "<img class=\"bookImg\" src=\"images/nocover.jpg\" alt=\"$val[0]\">";
 		}
+		
+		echo '<div class="bookInfoContainer">';
+		echo "<h1 align=\"center\">$val[0]</h1>";
 		echo "<p>Written by $val[5]</p>";
 		echo "<p>Published by $val[1]</p>";
 		echo "<p>ISBN: $val[2]</p>";
@@ -79,6 +85,7 @@ Book Rental Service
 	{
 		echo '<p>Book does not exist.</p>'; 
 	}
+	echo '</div>';
 ?>
 
 	<div id="fire_mod" class="popupContainer" style="display:none;">
@@ -152,6 +159,7 @@ Book Rental Service
 	})
 </script>
 
+</div>
 </div>
 </body>
 </html>

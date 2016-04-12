@@ -86,12 +86,13 @@ div.faqContainer{
 p{
 	line-height: 2em;
 }
+
 div.detailContainer{
 	margin: auto;
 	width: 580px;
 	position: absolute;
-    left: 50%;
-    margin-left: -140px;
+    	left: 50%;
+    	margin-left: -140px;
 	margin-top: 60px;
 	text-align:center;
 	font-size: 18;
@@ -109,6 +110,7 @@ div.innerDetailContainer{
 input.buttonMargin{
 	margin-top:8px;
 }
+
 img.imgList{
 	padding-top: 30px;
 	padding-left:35px;
@@ -116,6 +118,31 @@ img.imgList{
 	border-radius: 8px;
 	height: 300px;
 	width: 225px;
+}
+
+div.bookDetailContainer{
+	width: 95%;
+	height: auto;
+	background-color: white;
+	margin:auto;
+}
+
+div.bookInfoContainer{
+	
+	width: 60%;
+	position: relative;
+	font-size: 15;
+	float:right;
+	left: %;
+	text-align: center;
+	padding: 2%;
+	margin:auto;
+}
+
+img.bookImg{
+	height: 375px;
+	width: 300px;
+	padding: 2%;
 }
 
 table{

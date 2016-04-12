@@ -88,6 +88,7 @@ Manage Copy|Book Service Rental
 	 echo '<th>Book ID</th>';
 	 echo '<th>Copy ID</th>';
 	 echo '<th>Reason</th>';
+	 echo '<th></th>';
   	 echo '</tr>';
 	 while($val = mysql_fetch_row($result))
 	 {

@@ -51,7 +51,7 @@ else
 if($error != '') 
 { 
 	echo $error;
-	header("refresh:3;url=$_POST[lastPage]")
+	header("refresh:3;url=$_POST[lastPage]");
 }
 else header("location: $_POST[lastPage]");
 ?>

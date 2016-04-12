@@ -53,7 +53,8 @@ Book Rental Service
 	ba.user_id,
 	ba.return_id,
 	ba.delivered,
-	ba.order_id
+	ba.order_id,
+	ba.copy_id
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id 
 	order by order_id desc"; 
@@ -65,7 +66,7 @@ Book Rental Service
 	 echo '<th>Order#</th>';
 	 echo '<th>User</th>';
      echo '<th>Title</th>';	
-     echo '<th>ISBN</th>';
+     echo '<th>Copy ID</th>';
 	 echo '<th>Date Rented</th>';
 	 echo '<th>Date Returned</th>';
 	 echo '<th>Confirmed By</th>';
@@ -78,7 +79,7 @@ Book Rental Service
 		echo "<td>";
     	echo "$val[0]";
 		echo "</td>";	
-    	echo "<td>$val[2]</td>";
+    	echo "<td>$val[11]</td>";
 		echo "<td>$val[3]</td>";
 		if($val[6])
 		{

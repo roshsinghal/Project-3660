@@ -16,7 +16,10 @@ try {
 	$conn->exec("update book_details set archived=$_POST[archive] where book_id='$_POST[bookID]'");
 	$conn->commit();
 	
-	echo "<h3>Book successfully archived.</h3>";
+	if($_POST['archive'])
+		echo "<h3>Book successfully archived.</h3>";
+	else
+		echo "<h3>Book successfully restored.</h3>";
 	header( "refresh:3;url=manageBook.php" );
 
 } catch (Exception $e) {

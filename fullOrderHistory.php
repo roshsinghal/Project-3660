@@ -57,7 +57,7 @@ Book Rental Service
 	bf.full_name
 	from book_details bd 
 	inner join orders ba on bd.book_id=ba.book_id 
-	inner join users bf on bf.user_name=ba.user_id
+	inner join users bf on bf.user_name=ba.return_id
 	order by order_id desc"; 
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)

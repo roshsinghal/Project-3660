@@ -13,12 +13,10 @@ try {
 	$_POST['bookID'] = mysql_escape_string($_POST['bookID']);
 
 	$conn->beginTransaction();;
-	$conn->exec("update book_details set archived='$_POST[archive]' where book_id='$$_POST[bookID]'");
+	$conn->exec("update book_details set archived=$_POST[archive] where book_id='$_POST[bookID]'");
 	$conn->commit();
 	
-	echo "<h3>Book ";
-	echo ($_POST["bookID"]);
-	echo " moved!</h3>";
+	echo "<h3>Book successfully archived.</h3>";
 	header( "refresh:3;url=manageBook.php" );
 
 } catch (Exception $e) {

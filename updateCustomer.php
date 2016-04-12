@@ -102,7 +102,7 @@ else
 	echo " value=\"$val[1]\"";
 }
 echo '><br>';
-echo 'Phone Number: <input type="text" name="updatePhoner"';
+echo 'Phone Number: <input type="text" name="updatePhone"';
 if($regErr)
 {
 	if(!$regErr['updatePhone'])

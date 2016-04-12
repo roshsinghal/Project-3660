@@ -32,7 +32,7 @@
 			echo "<div class=\"dropdown\">";
 			echo "<li><a href=\"#\" >Manage</a>";
 			echo "<div class=\"dropdown-content\">";
-			echo "<ul>"
+			echo "<ul>";
 			
 				if(!$_SESSION['is_admin'])
 				{	

@@ -23,7 +23,7 @@ try {
 	$conn->commit();
 
 	
-	echo "<h3>Book returned.</h3>";
+	echo "<h3>Book return successfully accepted.</h3>";
 	header( "refresh:3;url=pendingReturns.php" );
 
 } catch (Exception $e) {

@@ -23,7 +23,7 @@ try {
 	$conn->commit();
 
 	
-	echo "<h3>Order placed.</h3>";
+	echo "<h3>Order successfully placed. The selected book is being shipped to your registered address.</h3>";
 	header( "refresh:3;url=showOrders.php" );
 
 } catch (Exception $e) {

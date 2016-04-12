@@ -52,6 +52,7 @@ Manage Book|Book Service Rental
 	$result = mysql_query($sql,$conn);
     if(mysql_num_rows($result) > 0)
 	{
+		echo '<div style="overflow-x:auto;">';
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
@@ -135,6 +136,7 @@ Manage Book|Book Service Rental
 	} 
 	
 	mysql_close($conn);
+	echo '</div>';
 ?>
 </div>
 </body>

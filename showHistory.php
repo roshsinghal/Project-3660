@@ -81,7 +81,7 @@ Book Rental Service
 		}
 		else
 		{
-			echo "<td>Not Returned</td>";
+			echo "<td>-</td>";
 		}
 		echo '</tr>';
 	 }

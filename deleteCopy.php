@@ -58,6 +58,7 @@ Manage Copy|Book Service Rental
      echo '<th>ISBN</th>';
 	 echo '<th>Book ID</th>';
 	 echo '<th>Copy ID</th>';
+	 echo '<th></th>';
   	 echo '</tr>';
 	 echo '<tr align="center">';
 	 $result = mysql_query("select title, author, publisher, isbn from book_details where book_id='$_POST[bookID]'",$conn);

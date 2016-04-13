@@ -1,6 +1,11 @@
 <?php
 	$username = 'group7';
 	$password = 'zpakwn';
+	if(empty($_POST['bookID']))
+	{
+		header('location: copyID.php');
+		die();
+	}
 
 try{
 	$conn = new PDO('mysql:host=17carson.cs.uleth.ca;dbname=group7',$username,$password);
@@ -22,11 +27,19 @@ try {
 	
 	echo "<h3>Copy ";
 	echo ($_POST["copyID"]);
-	echo " inserted!</h3>";
+	echo " added successfully!</h3>";
 	header( "refresh:3;url=$_POST[lastPage]" );
 
 } catch (Exception $e) {
   $conn->rollBack();
-  echo "Failed: " . $e->getMessage();
+  if($e->getCode() == 23000)
+	{
+		echo "CopyIDs must be unique.";
+		header( "refresh:3;url=$_POST[lastPage]" );
+	}
+	else
+	{
+		echo "Failed: " . $e->getMessage();
+	}
 }
 ?>

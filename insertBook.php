@@ -27,11 +27,19 @@ try {
 	
 	echo "<h3>Book ";
 	echo ($_POST["bookID"]);
-	echo " inserted!</h3>";
+	echo " added successfully!</h3>";
 	header( "refresh:3;url=manageBook.php" );
 
 } catch (Exception $e) {
   $conn->rollBack();
-  echo "Failed: " . $e->getMessage();
+  if($e->getCode() == 23000)
+	{
+		echo "BookIDs must be unique.";
+		header( "refresh:3;url=manageBook.php" );
+	}
+	else
+	{
+		echo "Failed: " . $e->getMessage();
+	}
 }
 ?>

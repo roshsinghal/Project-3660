@@ -49,7 +49,7 @@ Manage Copy|Book Service Rental
 	bd.author
 	from book_details bd 
 	inner join book_availability ba on bd.book_id=ba.book_id
-	where bd.book_id='$_POST[bookID]';"; 
+	where bd.book_id='$_REQUEST[bookID]';"; 
 	 echo '<table style="width:100%">';
   	 echo '<tr align="center">';
      echo '<th>Title</th>';
@@ -61,14 +61,15 @@ Manage Copy|Book Service Rental
 	 echo '<th></th>';
   	 echo '</tr>';
 	 echo '<tr align="center">';
-	 $result = mysql_query("select title, author, publisher, isbn from book_details where book_id='$_POST[bookID]'",$conn);
+	 $result = mysql_query("select title, author, publisher, isbn from book_details where book_id='$_REQUEST[bookID]'",$conn);
 	 $val = mysql_fetch_row($result);
     	echo "<td>$val[0]</td>";
 		echo "<td>$val[1]</td>";
     	echo "<td>$val[2]</td>";		
     	echo "<td>$val[3]</td>";
 		echo "<form action=\"insertCopy.php\" method=\"post\">";
-		echo "<td>$_POST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_POST[bookID]\" readonly>";
+		echo "<td>$_REQUEST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_REQUEST[bookID]\" readonly>";
+		echo "<input type=\"hidden\" name=\"lastPage\" value=\"$_SERVER[REQUEST_URI]\">";
 		echo "<td><input type=\"text\" name=\"copyID\"></td>";
 		echo "<td><input type=\"submit\" value=\"Insert\"></td>";
 		echo "</form>";
@@ -98,7 +99,8 @@ Manage Copy|Book Service Rental
     	echo "<td>$val[4]</td>";		
     	echo "<td>$val[3]</td>";
 		echo "<form action=\"deleteCopy2.php\" method=\"post\">";
-		echo "<td>$_POST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_POST[bookID]\" readonly>";
+		echo "<td>$_REQUEST[bookID]</td><input type=\"hidden\" name=\"bookID\" value=\"$_REQUEST[bookID]\" readonly>";
+		echo "<input type=\"hidden\" name=\"lastPage\" value=\"$_SERVER[REQUEST_URI]\">";
 		echo "<td>$val[5]</td><input type=\"hidden\" name=\"copyID\" value=\"$val[5]\" readonly>";
 		echo "<td><input type=\"text\" name=\"reason\" value=\"\"></td>";
 		echo "<td><input type=\"submit\" value=\"Delete\"></td>";

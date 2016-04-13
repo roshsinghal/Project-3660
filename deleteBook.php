@@ -70,7 +70,7 @@ Manage Copies|Book Service Rental
     	echo "<td>$val[1]</td>";		
     	echo "<td>$val[2]</td>";
 		echo "<td>$val[3]</td>";
-		echo "<form action=\"deleteCopy.php\" method=\"post\">";
+		echo "<form action=\"deleteCopy.php\" method=\"get\">";
 		echo "<td>$val[4]</td><input type=\"hidden\" name=\"bookID\" id=\"bookID\" value=\"$val[4]\" readonly>";
 		echo "<td><input type=\"submit\" value=\"Manage Copies\"></td>";
 		echo "</form>";

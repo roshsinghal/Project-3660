@@ -23,7 +23,7 @@ try {
 	echo "<h3>Copy ";
 	echo ($_POST["copyID"]);
 	echo " inserted!</h3>";
-	header( "refresh:3;url=deleteBook.php" );
+	header( "refresh:3;url=$_POST[lastPage]" );
 
 } catch (Exception $e) {
   $conn->rollBack();
